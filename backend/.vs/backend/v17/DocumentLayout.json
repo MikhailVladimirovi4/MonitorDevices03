@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:repository\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\models\\dto\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:models\\dto\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\repository\\irepository\\idevicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:repository\\irepository\\idevicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\models\\dto\\createdevicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:models\\dto\\createdevicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\models\\dto\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:models\\dto\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,8 +34,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IDeviceRepository.cs",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\IRepository\\IDeviceRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IRepository\\IDeviceRepository.cs",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\IRepository\\IDeviceRepository.cs",
+              "RelativeToolTip": "Repository\\IRepository\\IDeviceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T11:56:40.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DeviceDto.cs",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\DeviceDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\DeviceDto.cs",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\DeviceDto.cs",
+              "RelativeToolTip": "Models\\DTO\\DeviceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T11:40:39.495Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,7 +70,7 @@
               "RelativeDocumentMoniker": "Repository\\DeviceRepository.cs",
               "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
               "RelativeToolTip": "Repository\\DeviceRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwBsAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwA4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T09:23:27.119Z",
               "EditorCaption": ""
@@ -49,27 +83,27 @@
               "RelativeDocumentMoniker": "Models\\Device.cs",
               "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\Device.cs",
               "RelativeToolTip": "Models\\Device.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA6wBoAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA+wAkAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-13T12:08:45.69Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DeviceDto.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\DeviceDto.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\DeviceDto.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\DeviceDto.cs",
-              "RelativeToolTip": "Models\\DTO\\DeviceDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "CreateDeviceDto.cs",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\CreateDeviceDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\CreateDeviceDto.cs",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\CreateDeviceDto.cs",
+              "RelativeToolTip": "Models\\DTO\\CreateDeviceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T13:18:57.897Z",
+              "WhenOpened": "2025-01-14T11:39:09.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -77,8 +111,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T07:29:15.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-14T07:29:15.499Z"
             }
           ]
         }

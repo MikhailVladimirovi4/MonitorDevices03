@@ -16,6 +16,9 @@ namespace backend.DataAccess
             builder.Property(d => d.LastUpdatedConnected)
                .IsRequired();
 
+            builder.Property(d => d.ContractName)
+               .IsRequired();
+
             builder.Property(d => d.ContractId)
                .IsRequired();
 

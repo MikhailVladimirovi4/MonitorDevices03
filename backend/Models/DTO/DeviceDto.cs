@@ -4,6 +4,7 @@
         Guid Id,
         DateTime CreateAt,
         DateTime LastUpdatedConnected,
+        string ContractName,
         string ContractId,
         string Address,
         string IpAddress,

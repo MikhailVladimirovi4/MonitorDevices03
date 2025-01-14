@@ -2,11 +2,12 @@
 
 namespace backend.Models
 {
-    public class Device(string contractId, string address, string ipAddress, string macAddress)
+    public class Device(string contractName, string contractId, string address, string ipAddress, string macAddress)
     {
         public Guid Id { get; init; } = Guid.NewGuid();
         public DateTime CreateAt { get; init; } = DateTime.UtcNow;
         public DateTime LastUpdatedConnected { get; init; } = DateTime.UtcNow;
+        public string ContractName { get; init; } = contractName;
         public string ContractId { get; init; } = contractId;
         public string Address { get; init; } = address;
         public string IpAddress { get; init; } = ipAddress;
