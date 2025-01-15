@@ -1,9 +1,18 @@
+using backend.DataAccess;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<MonitorDbContext>(
+    options =>
+    {
+        options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(MonitorDbContext)));
+    });
 
 var app = builder.Build();
 

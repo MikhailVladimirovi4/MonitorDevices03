@@ -60,7 +60,9 @@ namespace backend.Repository
         public async Task<List<DeviceDto>> Get(CancellationToken ct)
         {
             var devices = await _dbContext.Devices
-            .Select(d => new DeviceDto(d.Id, d.CreateAt, d.LastUpdatedConnected, d.ContractName, d.ContractId, d.Address, d.IpAddress, d.MacAddress, d.Note, d.IsConnected, d.IsConnectedOld, d.PercentageOffline, d.Log)).ToListAsync(ct);
+            .Select(d => new DeviceDto(d.Id, d.CreateAt, d.LastUpdatedConnected, d.ContractName, d.ContractId, d.Address, d.IpAddress, d.MacAddress, d.Note, d.IsConnected, d.IsConnectedOld, d.PercentageOffline, d.Log))
+            .AsNoTracking()
+            .ToListAsync(ct);
 
             return devices;
         }
