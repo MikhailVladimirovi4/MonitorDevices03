@@ -18,6 +18,16 @@ builder.Services.AddDbContext<MonitorDbContext>(
 
 builder.Services.AddScoped<IDeviceRepository, DeviceRepository>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:5233");
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -26,7 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(c => c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+app.UseCors();
 
 app.UseHttpsRedirection();
 
