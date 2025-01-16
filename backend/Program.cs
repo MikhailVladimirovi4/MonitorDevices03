@@ -1,4 +1,6 @@
 using backend.DataAccess;
+using backend.Repository;
+using backend.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,8 @@ builder.Services.AddDbContext<MonitorDbContext>(
         options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(MonitorDbContext)));
     });
 
+builder.Services.AddScoped<IDeviceRepository, DeviceRepository>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -21,6 +25,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(c => c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 app.UseHttpsRedirection();
 
