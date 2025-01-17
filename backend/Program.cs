@@ -1,3 +1,4 @@
+using backend.Background;
 using backend.DataAccess;
 using backend.Repository;
 using backend.Repository.IRepository;
@@ -17,6 +18,7 @@ builder.Services.AddDbContext<MonitorDbContext>(
     });
 
 builder.Services.AddScoped<IDeviceRepository, DeviceRepository>();
+builder.Services.AddHostedService<NetStatus>();
 
 builder.Services.AddCors(options =>
 {

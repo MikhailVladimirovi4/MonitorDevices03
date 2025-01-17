@@ -11,7 +11,6 @@
         string MacAddress,
         string Note,
         string IsConnected,
-        string IsConnectedOld,
         string PercentageOffline,
         List<string> Log
         );
