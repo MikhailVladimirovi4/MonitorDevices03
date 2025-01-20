@@ -3,7 +3,6 @@
     public record DeviceDto(
         Guid Id,
         DateTime CreateAt,
-        DateTime LastUpdatedConnected,
         string ContractName,
         string ContractId,
         string Address,
@@ -11,7 +10,7 @@
         string MacAddress,
         string Note,
         string IsConnected,
-        string PercentageOffline,
+        string TimeOffline,
         List<string> Log
         );
 }

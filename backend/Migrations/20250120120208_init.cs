@@ -18,7 +18,6 @@ namespace backend.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CreateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastUpdatedConnected = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     ContractName = table.Column<string>(type: "text", nullable: false),
                     ContractId = table.Column<string>(type: "text", nullable: false),
                     Address = table.Column<string>(type: "text", nullable: false),
@@ -26,8 +25,7 @@ namespace backend.Migrations
                     MacAddress = table.Column<string>(type: "text", nullable: false),
                     Note = table.Column<string>(type: "text", nullable: false),
                     IsConnected = table.Column<string>(type: "text", nullable: false),
-                    IsConnectedOld = table.Column<string>(type: "text", nullable: false),
-                    PercentageOffline = table.Column<string>(type: "text", nullable: false),
+                    TimeOffline = table.Column<int>(type: "integer", nullable: false),
                     Log = table.Column<List<string>>(type: "text[]", nullable: false)
                 },
                 constraints: table =>

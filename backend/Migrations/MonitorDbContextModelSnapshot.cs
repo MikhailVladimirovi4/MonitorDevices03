@@ -52,13 +52,6 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("IsConnectedOld")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("LastUpdatedConnected")
-                        .HasColumnType("timestamp with time zone");
-
                     b.PrimitiveCollection<List<string>>("Log")
                         .IsRequired()
                         .HasColumnType("text[]");
@@ -71,9 +64,8 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PercentageOffline")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("TimeOffline")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

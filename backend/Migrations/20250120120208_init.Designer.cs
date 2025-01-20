@@ -13,7 +13,7 @@ using backend.DataAccess;
 namespace backend.Migrations
 {
     [DbContext(typeof(MonitorDbContext))]
-    [Migration("20250116095906_init")]
+    [Migration("20250120120208_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -55,13 +55,6 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("IsConnectedOld")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("LastUpdatedConnected")
-                        .HasColumnType("timestamp with time zone");
-
                     b.PrimitiveCollection<List<string>>("Log")
                         .IsRequired()
                         .HasColumnType("text[]");
@@ -74,9 +67,8 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PercentageOffline")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("TimeOffline")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

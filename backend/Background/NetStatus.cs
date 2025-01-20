@@ -1,60 +1,84 @@
 ﻿using backend.DataAccess;
+using backend.Models;
 using backend.Models.DTO;
-using Microsoft.EntityFrameworkCore;
+using backend.Repository;
 using System.Net.NetworkInformation;
-using System.Threading;
 
 namespace backend.Background
 {
     public class NetStatus : BackgroundService
     {
-        private readonly MonitorDbContext _dbContext;
-        private readonly TimeSpan _timeOut = TimeSpan.FromMinutes(15);
+        private readonly int _waitMinutes = 1;
+        private readonly TimeSpan _timeOut;
+        private readonly DeviceRepository _deviceRepository;
+        private List<DeviceNetworkDto> _devices;
 
-        public NetStatus(MonitorDbContext dbContext)
+        public NetStatus(DeviceRepository deviceRepository)
         {
-            _dbContext = dbContext;
+            _deviceRepository = deviceRepository;
+            _devices = new List<DeviceNetworkDto>();
+            _timeOut = TimeSpan.FromMinutes(_waitMinutes);
         }
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+
             while (!stoppingToken.IsCancellationRequested)
             {
-                var devices = _dbContext.Devices
-                    .Select(d => new DeviceDto(d.Id, d.CreateAt, d.LastUpdatedConnected, d.ContractName, d.ContractId, d.Address, d.IpAddress, d.MacAddress, d.Note, d.IsConnected, d.IsConnectedOld, d.Log))
-                    .ToList();
+                //if (_deviceRepository.IsUpdateAccessDiveces)
+                //{
+                //    _devices.Clear();
+                //    _devices = await UpdateNetAccessDevices(stoppingToken);
+                //}
 
-                foreach (var device in devices)
-                {
-                    await _dbContext.Devices
-                        .Where(d => d.IpAddress == device.IpAddress)
-                        .ExecuteUpdateAsync(s => s
-                        .SetProperty(d => d.IsConnected, d => GetNetStatus(device.IpAddress)));
+                //await RunCheck(stoppingToken);
+                //await Task.Delay(_timeOut, stoppingToken);
 
-                    await _dbContext.SaveChangesAsync(stoppingToken);
-                }
-
-                await Task.Delay(_timeOut, stoppingToken);
+                Console.WriteLine("Ping");
+                await Task.Delay(1000);
             }
         }
-        private static string GetNetStatus(string host)
-        {
-            int responseTime = 2000;
+        //private async Task<List<DeviceNetworkDto>> UpdateNetAccessDevices(CancellationToken stoppingToken)
+        //{
+        //    return await _deviceRepository.GetAccessDevices(stoppingToken);
+        //}
 
-            try
-            {
-                Ping ping = new();
-                PingReply ResultPing = ping.Send(host, responseTime);
-                if (ResultPing.Status == IPStatus.Success)
-                    return "online";
-                else
-                    return "offline";
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+        //private async Task RunCheck(CancellationToken stoppingToken)
+        //{
+        //    foreach (var device in _devices)
+        //    {
+        //        string currentNetStatus = GetNetStatus(device.IpAddress);
+        //        int newTimeOffline = device.TimeOffline;
+        //        List<string> newLog = device.Log;
 
-            return "offline";
-        }
+        //        if (currentNetStatus == "offline")
+        //            newTimeOffline += _waitMinutes;
+
+        //        if (device.IsConnected != currentNetStatus)
+        //            newLog.Add(DateTime.UtcNow.ToString() + ": устройтство " + currentNetStatus + ".");
+
+        //        var a = await _deviceRepository.UpdateNetStatus(device.IpAddress, currentNetStatus, newTimeOffline, newLog, stoppingToken);
+        //    }
+        //}
+        //private static string GetNetStatus(string host)
+        //{
+        //    int responseTime = 2000;
+
+        //    try
+        //    {
+        //        Ping ping = new();
+        //        PingReply ResultPing = ping.Send(host, responseTime);
+        //        if (ResultPing.Status == IPStatus.Success)
+        //            return "online";
+        //        else
+        //            return "offline";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex);
+        //    }
+
+        //    return "offline";
+        //}
     }
 }

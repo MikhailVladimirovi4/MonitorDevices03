@@ -13,9 +13,6 @@ namespace backend.DataAccess
             builder.Property(d => d.CreateAt)
                 .IsRequired();
 
-            builder.Property(d => d.LastUpdatedConnected)
-               .IsRequired();
-
             builder.Property(d => d.ContractName)
                .IsRequired();
 
@@ -37,10 +34,7 @@ namespace backend.DataAccess
             builder.Property(d => d.IsConnected)
                .IsRequired();
 
-            builder.Property(d => d.IsConnectedOld)
-               .IsRequired();
-
-            builder.Property(d => d.PercentageOffline)
+            builder.Property(d => d.TimeOffline)
                .IsRequired();
 
             builder.Property(d => d.Log)

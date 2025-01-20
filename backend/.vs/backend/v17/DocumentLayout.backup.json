@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\VSProjects\\MonitorDevices03\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\background\\netstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:background\\netstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\repository\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:repository\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\models\\dto\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:models\\dto\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\contracts\\getdevicesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:contracts\\getdevicesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\dataaccess\\monitordbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:dataaccess\\monitordbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "backend",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\backend.csproj",
-              "RelativeDocumentMoniker": "backend.csproj",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\backend.csproj",
-              "RelativeToolTip": "backend.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-17T10:19:11.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NetStatus.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\NetStatus.cs",
-              "RelativeDocumentMoniker": "Background\\NetStatus.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\NetStatus.cs",
-              "RelativeToolTip": "Background\\NetStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T09:26:29.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeviceController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Controllers\\DeviceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DeviceController.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Controllers\\DeviceController.cs",
-              "RelativeToolTip": "Controllers\\DeviceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T09:23:18.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetDevicesResponse.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Contracts\\GetDevicesResponse.cs",
-              "RelativeDocumentMoniker": "Contracts\\GetDevicesResponse.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Contracts\\GetDevicesResponse.cs",
-              "RelativeToolTip": "Contracts\\GetDevicesResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T09:23:14.11Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeviceRepository.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\DeviceRepository.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
-              "RelativeToolTip": "Repository\\DeviceRepository.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAYwD4AAADEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T09:22:34.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DeviceDto.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\DeviceDto.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\DeviceDto.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\DeviceDto.cs",
-              "RelativeToolTip": "Models\\DTO\\DeviceDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T09:20:02.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAewCkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T07:29:15.499Z",
+              "WhenOpened": "2025-01-20T11:58:01.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MonitorDbContext.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\DataAccess\\MonitorDbContext.cs",
-              "RelativeDocumentMoniker": "DataAccess\\MonitorDbContext.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\DataAccess\\MonitorDbContext.cs",
-              "RelativeToolTip": "DataAccess\\MonitorDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DeviceRepository.cs",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\DeviceRepository.cs",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
+              "RelativeToolTip": "Repository\\DeviceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T12:05:22.974Z",
+              "WhenOpened": "2025-01-20T11:50:47.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NetStatus.cs",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\NetStatus.cs",
+              "RelativeDocumentMoniker": "Background\\NetStatus.cs",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\NetStatus.cs",
+              "RelativeToolTip": "Background\\NetStatus.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T11:48:27.094Z",
               "EditorCaption": ""
             }
           ]

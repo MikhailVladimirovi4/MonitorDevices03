@@ -9,10 +9,12 @@ namespace backend.Repository
     public class DeviceRepository : IDeviceRepository
     {
         private readonly MonitorDbContext _dbContext;
+        public bool IsUpdateAccessDiveces { get; private set; }
 
         public DeviceRepository(MonitorDbContext dbContext)
         {
             _dbContext = dbContext;
+            IsUpdateAccessDiveces = true;
         }
 
         public async Task<string> Create(CreateDeviceDto createDeviceDto, CancellationToken ct)
@@ -35,6 +37,7 @@ namespace backend.Repository
 
                 await _dbContext.Devices.AddAsync(device, ct);
                 await _dbContext.SaveChangesAsync(ct);
+                IsUpdateAccessDiveces = true;
 
                 result = "Устройство с ip адресом: " + createDeviceDto.IpAddress + " создано.";
             }
@@ -53,6 +56,7 @@ namespace backend.Repository
                 .ExecuteDeleteAsync(ct);
 
             await _dbContext.SaveChangesAsync(ct);
+            IsUpdateAccessDiveces = true;
 
             return "Запись " + ipAddress + " удалена.";
         }
@@ -60,7 +64,7 @@ namespace backend.Repository
         public async Task<List<DeviceDto>> Get(CancellationToken ct)
         {
             var devices = await _dbContext.Devices
-            .Select(d => new DeviceDto(d.Id, d.CreateAt, d.LastUpdatedConnected, d.ContractName, d.ContractId, d.Address, d.IpAddress, d.MacAddress, d.Note, d.IsConnected, d.IsConnectedOld, d.Log))
+            .Select(d => new DeviceDto(d.Id, d.CreateAt, d.ContractName, d.ContractId, d.Address, d.IpAddress, d.MacAddress, d.Note, d.IsConnected, d.TimeOffline.ToString(), d.Log))
             .AsNoTracking()
             .ToListAsync(ct);
 
@@ -82,15 +86,28 @@ namespace backend.Repository
             return "Данные устройтсва с ip-адресом: " + ipAddress + " изменены.";
         }
 
-        public async Task<Guid> AddLogEntry(Guid id, string text, CancellationToken ct)
+        public async Task<List<DeviceNetworkDto>> GetAccessDevices(CancellationToken ct)
+        {
+            var devices = await _dbContext.Devices
+                .Select(d => new DeviceNetworkDto(d.IpAddress, d.IsConnected, d.TimeOffline, d.Log))
+                .ToListAsync(ct);
+
+            IsUpdateAccessDiveces = false;
+
+            return devices;
+        }
+
+        public async Task<string> UpdateNetStatus(string ipAddress, string currentNetStatus, int timeOffline, List<string> log, CancellationToken ct)
         {
             await _dbContext.Devices
-               .Where(d => d.Id == id).ExecuteUpdateAsync(s => s
-               .SetProperty(d => d.AddLog(text), d => text), ct);
+                .Where(d => d.IpAddress == ipAddress).ExecuteUpdateAsync(s => s
+                .SetProperty(d => d.IsConnected, d => currentNetStatus)
+                .SetProperty(d => d.TimeOffline, d => timeOffline)
+                .SetProperty(d => d.Log, d => log), ct);
 
             await _dbContext.SaveChangesAsync(ct);
 
-            return id;
+            return ipAddress;
         }
     }
 }
