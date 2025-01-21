@@ -13,10 +13,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MonitorDbContext>(
     options =>
     {
-        options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(MonitorDbContext)));
-    });
+    options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(MonitorDbContext)));
+    }, ServiceLifetime.Singleton);
 
-builder.Services.AddScoped<IDeviceRepository, DeviceRepository>();
+builder.Services.AddSingleton<IDeviceRepository, DeviceRepository>();
 builder.Services.AddHostedService<NetStatus>();
 
 builder.Services.AddCors(options =>
