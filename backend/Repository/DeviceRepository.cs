@@ -67,7 +67,7 @@ namespace backend.Repository
             return devices;
         }
 
-        public async Task<string> Update(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
+        public async Task<string> UpdateDevice(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
         {
             await _dbContext.Devices
                 .Where(d => d.IpAddress == ipAddress).ExecuteUpdateAsync(s => s
@@ -82,7 +82,7 @@ namespace backend.Repository
             return "Данные устройтсва с ip-адресом: " + ipAddress + " изменены.";
         }
 
-        public async Task<List<DeviceNetworkDto>> GetAccessDevices(CancellationToken ct)
+        public async Task<List<DeviceNetworkDto>> GetNetStatusDevices(CancellationToken ct)
         {
             var devices = await _dbContext.Devices
                 .Select(d => new DeviceNetworkDto(d.IpAddress, d.IsConnected, d.TimeOffline, d.Log))
@@ -103,6 +103,25 @@ namespace backend.Repository
             await _dbContext.SaveChangesAsync(ct);
 
             return ipAddress;
+        }
+
+        public async Task<List<DeviceMonthLogDto>> GetMonthlyLogData(CancellationToken ct)
+        {
+            var devices = await _dbContext.Devices
+                .Select(d => new DeviceMonthLogDto(d.ContractName, d.ContractId, d.IpAddress, d.TimeOffline))
+                .ToListAsync (ct);
+
+            return devices;
+        }
+
+        public async Task<string> ResetDataOffline(CancellationToken ct)
+        {
+            await _dbContext.Devices.ExecuteUpdateAsync(s => s
+                .SetProperty(d => d.TimeOffline, d => 0));
+
+            await _dbContext.SaveChangesAsync(ct);
+
+            return "Счетчик offline сброшен";
         }
     }
 }

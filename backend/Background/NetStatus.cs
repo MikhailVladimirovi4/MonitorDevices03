@@ -24,8 +24,7 @@ namespace backend.Background
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                _devices = await _deviceRepository.GetAccessDevices(stoppingToken);
-                Console.WriteLine(_devices.Count + " записей в таблице");
+                _devices = await _deviceRepository.GetNetStatusDevices(stoppingToken);
 
                 await RunCheck(stoppingToken);
                 await Task.Delay(_timeOut, stoppingToken);
@@ -36,10 +35,11 @@ namespace backend.Background
         {
             foreach (var device in _devices)
             {
-                string currentNetStatus = GetNetStatus(device.IpAddress);
                 int newTimeOffline = device.TimeOffline;
                 List<string> newLog = device.Log;
                 _isWrite = false;
+
+                string currentNetStatus = await GetNetStatusAsync(device.IpAddress);
 
                 if (currentNetStatus == "offline")
                 {
@@ -49,7 +49,7 @@ namespace backend.Background
 
                 if (device.IsConnected != currentNetStatus)
                 {
-                    newLog.Add(DateTime.UtcNow.ToString() + ": устройтство " + currentNetStatus + ".");
+                    newLog.Add(DateTime.Now.ToString() + ": устройтство " + currentNetStatus + ".");
                     _isWrite = true;
                 }
 
@@ -59,14 +59,14 @@ namespace backend.Background
                 }
             }
         }
-        private static string GetNetStatus(string host)
+        private static async Task<string> GetNetStatusAsync(string host)
         {
             int responseTime = 2000;
 
             try
             {
                 Ping ping = new();
-                PingReply ResultPing = ping.Send(host, responseTime);
+                PingReply ResultPing = await ping.SendPingAsync(host, responseTime);
                 if (ResultPing.Status == IPStatus.Success)
                     return "online";
                 else

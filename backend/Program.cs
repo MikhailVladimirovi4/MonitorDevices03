@@ -18,6 +18,7 @@ builder.Services.AddDbContext<MonitorDbContext>(
 
 builder.Services.AddSingleton<IDeviceRepository, DeviceRepository>();
 builder.Services.AddHostedService<NetStatus>();
+builder.Services.AddHostedService<Archiving>();
 
 builder.Services.AddCors(options =>
 {

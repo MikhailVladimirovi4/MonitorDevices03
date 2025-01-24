@@ -3,7 +3,7 @@
     public class Device(string contractName, string contractId, string address, string ipAddress, string macAddress)
     {
         public Guid Id { get; init; } = Guid.NewGuid();
-        public DateTime CreateAt { get; init; } = DateTime.UtcNow;
+        public DateTime CreateAt { get; init; } = DateTime.Now;
         public string ContractName { get; init; } = contractName;
         public string ContractId { get; init; } = contractId;
         public string Address { get; init; } = address;

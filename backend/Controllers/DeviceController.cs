@@ -33,7 +33,7 @@ namespace backend.Controllers
         [HttpPut]
         public async Task<ActionResult<string>> Update(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
         {
-            string result = await _devicesRepository.Update(ipAddress, contractName, contractId, address, macAddress, note, ct);
+            string result = await _devicesRepository.UpdateDevice(ipAddress, contractName, contractId, address, macAddress, note, ct);
 
             return Ok(result);
         }
