@@ -93,7 +93,6 @@ namespace backend.Repository
 
         public async Task<string> UpdateNetStatus(string ipAddress, string currentNetStatus, int timeOffline, List<string> log, CancellationToken ct)
         {
-            Console.WriteLine(ipAddress + " записываю значения");
             await _dbContext.Devices
                 .Where(d => d.IpAddress == ipAddress).ExecuteUpdateAsync(s => s
                 .SetProperty(d => d.IsConnected, d => currentNetStatus)
@@ -121,7 +120,7 @@ namespace backend.Repository
 
             await _dbContext.SaveChangesAsync(ct);
 
-            return "Счетчик offline сброшен";
+            return "Счетчик минут недоступности сброшен";
         }
     }
 }

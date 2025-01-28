@@ -14,29 +14,27 @@ namespace backend.Background
         {
             _deviceRepository = deviceRepository;
             _devices = new List<DeviceMonthLogDto>();
-            _month = -1;
-            _timeOut = TimeSpan.FromMinutes(_waitDay);
+            _month = DateTime.Now.Month;
+            _timeOut = TimeSpan.FromDays(_waitDay);
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                Console.WriteLine(" сервис Архивирование");
                 if (_month != DateTime.Now.Month)
                 {
-                    Console.WriteLine("Архивирование");
                     _month = DateTime.Now.Month;
-                    string path = @"C:\\ArhMonDevices\\actors.txt\";
+                    string path = @"C:\ArhMonDevices\arhiveOffline_" + _month + "." + DateTime.Now.Year + ".txt";
                     _devices = await _deviceRepository.GetMonthlyLogData(stoppingToken);
                     string[] data = new string[_devices.Count];
 
                     for (int i = 0; i < data.Length; i++)
                     {
-                        data[i] = _devices[i].ContractName 
-                            + ", " + _devices[i].ContractId 
-                            + ", " + _devices[i].IpAddress 
-                            + ", не в сети: " + _devices[i].TimeOffline.ToString() + ", минут.";
+                        data[i] = _devices[i].ContractName
+                            + ", идентификатор: " + _devices[i].ContractId
+                            + ", размещение: " + _devices[i].IpAddress
+                            + ", не в сети: " + _devices[i].TimeOffline.ToString() + " минут.";
                     }
 
                     await CreateArchiveFile(path, data);
@@ -50,7 +48,8 @@ namespace backend.Background
         {
             try
             {
-                await System.IO.File.WriteAllLinesAsync(path, data);
+                Console.WriteLine("Создали успешно");
+                await File.WriteAllLinesAsync(path, data);
 
                 return "Архив создан успешно";
             }
