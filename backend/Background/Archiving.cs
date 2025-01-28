@@ -33,8 +33,8 @@ namespace backend.Background
                     {
                         data[i] = _devices[i].ContractName
                             + ", идентификатор: " + _devices[i].ContractId
-                            + ", размещение: " + _devices[i].IpAddress
-                            + ", не в сети: " + _devices[i].TimeOffline.ToString() + " минут.";
+                            + ", ip-адрес: " + _devices[i].IpAddress
+                            + ", было не в сети: " + _devices[i].TimeOffline.ToString() + " минут.";
                     }
 
                     await CreateArchiveFile(path, data);
