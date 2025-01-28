@@ -25,7 +25,7 @@ namespace backend.Background
                 if (_month != DateTime.Now.Month)
                 {
                     _month = DateTime.Now.Month;
-                    string path = @"C:\ArhMonDevices\arhiveOffline_" + _month + "." + DateTime.Now.Year + ".txt";
+                    string path = @"C:\MonitorDevices_arhiveOffline_" + _month + "." + DateTime.Now.Year + ".txt";
                     _devices = await _deviceRepository.GetMonthlyLogData(stoppingToken);
                     string[] data = new string[_devices.Count];
 
