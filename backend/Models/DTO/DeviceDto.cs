@@ -10,7 +10,6 @@
         string MacAddress,
         string Note,
         string IsConnected,
-        string TimeOffline,
-        List<string> Log
+        string TimeOffline
         );
 }

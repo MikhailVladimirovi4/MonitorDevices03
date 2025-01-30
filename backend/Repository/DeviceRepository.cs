@@ -60,7 +60,7 @@ namespace backend.Repository
         public async Task<List<DeviceDto>> Get(CancellationToken ct)
         {
             var devices = await _dbContext.Devices
-            .Select(d => new DeviceDto(d.Id, d.CreateAt, d.ContractName, d.ContractId, d.Address, d.IpAddress, d.MacAddress, d.Note, d.IsConnected, d.TimeOffline.ToString(), d.Log))
+            .Select(d => new DeviceDto(d.Id, d.CreateAt, d.ContractName, d.ContractId, d.Address, d.IpAddress, d.MacAddress, d.Note, d.IsConnected, d.TimeOffline.ToString()))
             .AsNoTracking()
             .ToListAsync(ct);
 
@@ -108,9 +108,17 @@ namespace backend.Repository
         {
             var devices = await _dbContext.Devices
                 .Select(d => new DeviceMonthLogDto(d.ContractName, d.ContractId, d.IpAddress, d.TimeOffline))
-                .ToListAsync (ct);
+                .ToListAsync(ct);
 
             return devices;
+        }
+
+        public async Task<List<DeviceLogDto>> GetDeviceLog(string ipAddress, CancellationToken ct)
+        {
+            var log = await _dbContext.Devices
+                .Where(d => d.IpAddress == ipAddress).Select(l => new DeviceLogDto(l.Log)).ToListAsync(ct);
+
+            return log;
         }
 
         public async Task<string> ResetDataOffline(CancellationToken ct)

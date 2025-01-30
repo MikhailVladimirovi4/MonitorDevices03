@@ -1,0 +1,11 @@
+.tableTh {
+    font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 1px 1px;
+	background: #d8d8d8;
+	font-size: 14px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+    width: auto;
+}

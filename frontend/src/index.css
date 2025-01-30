@@ -1,39 +1,103 @@
-a {
-  color: #646cff;
-  text-decoration: inherit;
+.table {
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
 }
-a:hover {
-  color: #535bf2;
+.table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 1px 1px;
+	background: #d8d8d8;
+	font-size: 14px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+.table tbody td {
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+.table thead tr th:first-child, .table tbody tr td:first-child {
+	border-left: none;
+}
+.table thead tr th:last-child, .table tbody tr td:last-child {
+	border-right: none;
+}
+.table tbody tr:nth-child(even){
+	background: #f3f3f3;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2%;
+  text-align: left;
+  border-top: 2px solid #a79e00;
+  background: #ffffff;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 13px;
+  color: #ff0000;
+}
+.offline{
+  text-align: center;
+  width: 1%;
+  font-size: 20px;
+  color: #ff0000;
+}
+.online{
+  text-align: center;
+  width: 1%;
+  font-size: 20px;
+  color: #00aa25;
+}
+.textAddress{
+	text-align: left;
+  width: 30%;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.textNote{
+  width: 30%;
+	text-align: left;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.textIp{
+  width: 8%;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.textMac{
+  width: 8%;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.textName{
+  width: 8%;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.textId{
+  width: 8%;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.textOffline{
+  width: 2%;
+	text-align: right;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+  color: #ff0000;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}

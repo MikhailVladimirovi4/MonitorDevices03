@@ -7,6 +7,7 @@ namespace backend.Repository.IRepository
         Task<string> Create(CreateDeviceDto createDeviceDto, CancellationToken ct);
         Task<string> Delete(string ipAddress, CancellationToken ct);
         Task<List<DeviceDto>> Get(CancellationToken ct);
+        Task<List<DeviceLogDto>> GetDeviceLog(string ipAddress, CancellationToken ct);
         Task<List<DeviceMonthLogDto>> GetMonthlyLogData(CancellationToken ct);
         Task<List<DeviceNetworkDto>> GetNetStatusDevices(CancellationToken ct);
         Task<string> ResetDataOffline(CancellationToken ct);
