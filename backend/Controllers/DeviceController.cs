@@ -2,6 +2,7 @@
 using backend.Models.DTO;
 using backend.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace backend.Controllers
 {
@@ -44,6 +45,14 @@ namespace backend.Controllers
             string result = await _devicesRepository.Delete(ipAddress, ct);
 
             return Ok(result);
+        }
+
+        [HttpGet("device_log")]
+        public async Task<ActionResult<GetDeviceLogResponse>> GetDeviceLog(string ipAddress, CancellationToken ct)
+        {
+            GetDeviceLogResponse response = new(await _devicesRepository.GetDeviceLog(ipAddress, ct));
+
+            return Ok(response);
         }
     }
 }

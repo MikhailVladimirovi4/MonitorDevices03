@@ -113,12 +113,12 @@ namespace backend.Repository
             return devices;
         }
 
-        public async Task<List<DeviceLogDto>> GetDeviceLog(string ipAddress, CancellationToken ct)
+        public async Task<DeviceLogDto> GetDeviceLog(string ipAddress, CancellationToken ct)
         {
-            var log = await _dbContext.Devices
+            List<DeviceLogDto> log = await _dbContext.Devices
                 .Where(d => d.IpAddress == ipAddress).Select(l => new DeviceLogDto(l.Log)).ToListAsync(ct);
 
-            return log;
+            return log[0];
         }
 
         public async Task<string> ResetDataOffline(CancellationToken ct)
