@@ -1,8 +1,26 @@
+* {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+.main {
+  margin-bottom: 2%;
+}
+
+time {
+  color: #140720;
+}
 .table {
+  margin-top: 3%;
   background: #cacaca;
   width: 100%;
 }
 .table thead th {
+  position: sticky;
+  top: 6%;
   font-weight: bold;
   text-align: left;
   border: none;
@@ -26,6 +44,14 @@
 }
 .table tbody tr:nth-child(even) {
   background: #e9e9e9;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 10px;
+  background-color: #242424;
+  color: #d8d8d8;
 }
 .footer {
   position: fixed;
@@ -101,12 +127,6 @@
   font-size: 14px;
   vertical-align: top;
   color: #ff0000;
-}
-.header {
-  width: 100%;
-  padding: 10px 10px;
-  background-color: #242424;
-  color: #d8d8d8;
 }
 .filter {
   width: 30%;

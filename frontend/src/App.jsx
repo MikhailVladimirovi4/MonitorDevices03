@@ -146,6 +146,7 @@ export default function App() {
           {"Всего: " + numberNotes + ". Offline: " + totalOffline}
         </h1>
       </header>
+      <main>
       <table className="table" cellSpacing="0">
         <thead>
           <tr>
@@ -178,6 +179,7 @@ export default function App() {
           })}
         </tbody>
       </table>
+      </main>
       <footer className="footer">{showLog}</footer>
     </div>
   );
