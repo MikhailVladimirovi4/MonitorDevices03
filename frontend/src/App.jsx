@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
-import { fetchDevices } from "./services/device";
+import { fetchDevices, deleteDevice } from "./services/device";
 import Notes from "./components/notes/Notes.jsx";
-//import Button from "./components/buttons/Button.jsx";
+import useInput from "./services/useInput.js";
+import Modal from "./components/modals/modal.jsx";
 
 export default function App() {
   const [devices, setDevices] = useState([]);
   const [updateData, setUpdateData] = useState(false);
+  const updateInterval = 60000;
   const [showLog, setShowLog] = useState("Логирование:");
   const [sortParam, setSortParam] = useState(4);
   const [sortDirection, setSortDirection] = useState(1);
+  const searchFilter = useInput();
+  const [numberNotes, setNumberNotes] = useState(0);
+  const [totalOffline, setTotalOffline] = useState(0);
+  const [openModal, SetOpenModal] = useState(false);
+  const [action, SetAction] = useState("");
+  const [ipAddress, SetIpAddress] = useState("");
 
   const fechData = async () => {
     try {
@@ -65,11 +73,13 @@ export default function App() {
       {
         sortParam == 8
           ? data.sort((a, b) =>
-              a.timeOffline - b.timeOffline ? sortDirection : -sortDirection
+              a.timeOffline > b.timeOffline ? sortDirection : -sortDirection
             )
           : null;
       }
-      console.log(data);
+      console.log("updateDevices");
+      setNumberNotes(data.length);
+      changeTotalOffline(data);
       setDevices(data);
     } catch (e) {
       console.log(e);
@@ -84,21 +94,58 @@ export default function App() {
     setSortParam(number);
   }
 
+  function changeTotalOffline(data) {
+    let total = 0;
+
+    data.forEach((device) => {
+      device.isConnected == "offline" ? total++ : null;
+    });
+
+    setTotalOffline(total);
+  }
+
   function actionComplete(text) {
     setUpdateData((prev) => !prev);
-    setShowLog(text);
-    setInterval(
-      () => setShowLog("Отображение результата действия на 10 секунд."),
-      10000
-    );
+    setShowLog("Логирование: " + text);
+    setInterval(() => setShowLog("Логирование:"), 10000);
+  }
+  function deleteNote() {
+    const response = deleteDevice(ipAddress);
+    response.then((value) => actionComplete(value));
   }
 
   useEffect(() => {
     fechData();
   }, [updateData, sortParam, sortDirection]);
 
+  useEffect(() => {
+    const timeInterval = setInterval(
+      () => setUpdateData((prev) => !prev),
+      updateInterval
+    );
+
+    return () => {
+      clearInterval(timeInterval);
+    };
+  }, []);
+
   return (
     <div>
+      <Modal
+        open={openModal}
+        action={action}
+        SetOpenModal={SetOpenModal}
+        deleteNote={deleteNote}
+      />
+      <header className="header">
+        <label className="fixed" htmlFor="search">
+          Поиск...
+        </label>
+        <input type="text" id="search" className="filter" {...searchFilter} />
+        <h1 className="fixedNotes">
+          {"Всего: " + numberNotes + ". Offline: " + totalOffline}
+        </h1>
+      </header>
       <table className="table" cellSpacing="0">
         <thead>
           <tr>
@@ -117,7 +164,17 @@ export default function App() {
         </thead>
         <tbody>
           {devices.map(({ id, ...props }) => {
-            return <Notes key={id} {...props} />;
+            return (
+              <Notes
+                key={id}
+                {...props}
+                searchFilter={searchFilter}
+                changeTotalOffline={changeTotalOffline}
+                SetOpenModal={SetOpenModal}
+                SetAction={SetAction}
+                SetIpAddress={SetIpAddress}
+              />
+            );
           })}
         </tbody>
       </table>

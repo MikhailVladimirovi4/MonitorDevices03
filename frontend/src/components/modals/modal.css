@@ -1,0 +1,23 @@
+.modal {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.delete {
+  align-content: center;
+  margin: auto;
+  background-color: rgba(226, 238, 160, 0.767);
+  color: #f70000;
+  min-width: 50px;
+  min-height: 20px;
+  padding: 1rem;
+  border: 3px solid #960202;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 3vw;
+}

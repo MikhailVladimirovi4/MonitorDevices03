@@ -1,30 +1,31 @@
 .table {
-	width: 100%;
-	border: none;
-	margin-bottom: 20px;
+  background: #cacaca;
+  width: 100%;
 }
 .table thead th {
-	font-weight: bold;
-	text-align: left;
-	border: none;
-	padding: 1px 1px;
-	background: #d8d8d8;
-	font-size: 14px;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  padding: 1px 1px;
+  background: #838383;
+  font-size: 14px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 .table tbody td {
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
+  border-left: 1px solid #9e9e9e;
+  border-right: 1px solid #ddd;
 }
-.table thead tr th:first-child, .table tbody tr td:first-child {
-	border-left: none;
+.table thead tr th:first-child,
+.table tbody tr td:first-child {
+  border-left: none;
 }
-.table thead tr th:last-child, .table tbody tr td:last-child {
-	border-right: none;
+.table thead tr th:last-child,
+.table tbody tr td:last-child {
+  border-right: none;
 }
-.table tbody tr:nth-child(even){
-	background: #f3f3f3;
+.table tbody tr:nth-child(even) {
+  background: #e9e9e9;
 }
 .footer {
   position: fixed;
@@ -32,72 +33,89 @@
   width: 100%;
   height: 2%;
   text-align: left;
-  border-top: 2px solid #a79e00;
-  background: #ffffff;
-  font-family: 'Roboto', Arial, sans-serif;
+  border-top: 2px solid #d8d8d8;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 13px;
-  color: #ff0000;
+  padding: 10px 10px;
+  background-color: #242424;
+  color: #d8d8d8;
 }
-.offline{
+.offline {
   text-align: center;
   width: 1%;
   font-size: 20px;
   color: #ff0000;
 }
-.online{
+.online {
   text-align: center;
   width: 1%;
   font-size: 20px;
   color: #00aa25;
 }
-.textAddress{
-	text-align: left;
+.textAddress {
+  text-align: left;
   width: 30%;
-	padding: 10px 15px;
-	font-size: 14px;
-	vertical-align: top;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
 }
-.textNote{
+.textNote {
   width: 30%;
-	text-align: left;
-	padding: 10px 15px;
-	font-size: 14px;
-	vertical-align: top;
+  text-align: left;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
 }
-.textIp{
+.textIp {
   width: 8%;
-	text-align: center;
-	padding: 10px 15px;
-	font-size: 14px;
-	vertical-align: top;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
 }
-.textMac{
+.textMac {
   width: 8%;
-	text-align: center;
-	padding: 10px 15px;
-	font-size: 14px;
-	vertical-align: top;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
 }
-.textName{
+.textName {
   width: 8%;
-	text-align: center;
-	padding: 10px 15px;
-	font-size: 14px;
-	vertical-align: top;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
 }
-.textId{
+.textId {
   width: 8%;
-	text-align: center;
-	padding: 10px 15px;
-	font-size: 14px;
-	vertical-align: top;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
 }
-.textOffline{
+.textOffline {
   width: 2%;
-	text-align: right;
-	padding: 10px 15px;
-	font-size: 14px;
-	vertical-align: top;
+  text-align: right;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
   color: #ff0000;
 }
-
+.header {
+  width: 100%;
+  padding: 10px 10px;
+  background-color: #242424;
+  color: #d8d8d8;
+}
+.filter {
+  width: 30%;
+  font-size: 14px;
+  background-color: #cfcfcf;
+}
+.fixedNotes {
+  position: fixed;
+  top: 2%;
+  right: 1.5%;
+  font-size: 1vw;
+}
