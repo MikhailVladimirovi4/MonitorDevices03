@@ -15,6 +15,11 @@ export default function Notes({
   SetOpenModal,
   SetAction,
   SetIpAddress,
+  SetContractName,
+  SetContractId,
+  SetAddress,
+  SetMacAddress,
+  SetNote,
 }) {
   return (
     <Fragment>
@@ -47,7 +52,14 @@ export default function Notes({
             <Button
               style={"editBtn"}
               onClick={() => (
-                SetOpenModal(true), SetAction("edit"), SetIpAddress(ipAddress)
+                SetAction("edit"),
+                SetIpAddress(ipAddress),
+                SetContractName(contractName),
+                SetContractId(contractId),
+                SetAddress(address),
+                SetMacAddress(macAddress),
+                SetNote(note),
+                SetOpenModal(true)
               )}
             >
               Edit

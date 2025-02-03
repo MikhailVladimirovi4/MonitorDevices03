@@ -1,6 +1,6 @@
 .modal {
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.699);
   position: fixed;
   top: 0;
   left: 0;
@@ -8,10 +8,18 @@
   width: 100%;
   display: flex;
 }
+.inputmodal {
+  font-size: 1vw;
+  border: 1px solid #150505;
+  border-radius: 5px;
+  padding: 0.5% 0.5%;
+  width: 100%;
+  background-color: rgb(206, 206, 204);
+}
 .delete {
   align-content: center;
   margin: auto;
-  background-color: rgba(226, 238, 160, 0.767);
+  background-color: rgba(200, 209, 148, 1);
   color: #f70000;
   min-width: 50px;
   min-height: 20px;
@@ -19,5 +27,27 @@
   border: 3px solid #960202;
   border-radius: 10px;
   box-sizing: border-box;
-  font-size: 3vw;
+  font-size: 2vw;
+}
+.edit {
+  align-content: center;
+  margin: auto;
+  background-color: rgba(226, 238, 160, 1);
+  min-width: 50px;
+  min-height: 20px;
+  padding: 1rem;
+  border: 3px solid #026c96;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.info {
+  align-content: center;
+  margin: auto;
+  background-color: rgba(226, 238, 160, 1);
+  min-width: 50px;
+  min-height: 20px;
+  padding: 1rem;
+  border: 3px solid #0400ec;
+  border-radius: 10px;
+  box-sizing: border-box;
 }

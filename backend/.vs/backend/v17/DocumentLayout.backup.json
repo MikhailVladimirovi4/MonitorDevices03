@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\VSProjects\\MonitorDevices03\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\background\\netstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:background\\netstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\models\\dto\\devicelogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +46,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "NetStatus.cs",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\NetStatus.cs",
+              "RelativeDocumentMoniker": "Background\\NetStatus.cs",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\NetStatus.cs",
+              "RelativeToolTip": "Background\\NetStatus.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T07:28:03.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "GetDeviceLogResponse.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Contracts\\GetDeviceLogResponse.cs",
               "RelativeDocumentMoniker": "Contracts\\GetDeviceLogResponse.cs",
@@ -54,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "IDeviceRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\IRepository\\IDeviceRepository.cs",
               "RelativeDocumentMoniker": "Repository\\IRepository\\IDeviceRepository.cs",
@@ -66,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DeviceLogDto.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\DTO\\DeviceLogDto.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\DeviceLogDto.cs",
@@ -78,19 +95,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DeviceController.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Controllers\\DeviceController.cs",
               "RelativeDocumentMoniker": "Controllers\\DeviceController.cs",
               "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Controllers\\DeviceController.cs",
               "RelativeToolTip": "Controllers\\DeviceController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAkwDAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAqwCMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T08:25:08.956Z"
+              "WhenOpened": "2025-01-30T08:25:08.956Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Device.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Models\\Device.cs",
               "RelativeDocumentMoniker": "Models\\Device.cs",
@@ -103,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DeviceRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
               "RelativeDocumentMoniker": "Repository\\DeviceRepository.cs",
@@ -115,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",

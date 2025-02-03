@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchDevices, deleteDevice } from "./services/device";
+import { fetchDevices, deleteDevice, editDevice } from "./services/device";
 import Notes from "./components/notes/Notes.jsx";
 import useInput from "./services/useInput.js";
 import Modal from "./components/modals/modal.jsx";
@@ -17,6 +17,11 @@ export default function App() {
   const [openModal, SetOpenModal] = useState(false);
   const [action, SetAction] = useState("");
   const [ipAddress, SetIpAddress] = useState("");
+  const [contractName, SetContractName] = useState("");
+  const [contractId, SetContractId] = useState("");
+  const [address, SetAddress] = useState("");
+  const [macAddress, SetMacAddress] = useState("");
+  const [note, SetNote] = useState("");
 
   const fechData = async () => {
     try {
@@ -113,6 +118,24 @@ export default function App() {
     const response = deleteDevice(ipAddress);
     response.then((value) => actionComplete(value));
   }
+  function editNote(
+    ipAddress,
+    newContractName,
+    newContractId,
+    newAddress,
+    newMacAddress,
+    newNote
+  ) {
+    const response = editDevice(
+      ipAddress,
+      newContractName,
+      newContractId,
+      newAddress,
+      newMacAddress,
+      newNote
+    );
+    response.then((value) => actionComplete(value));
+  }
 
   useEffect(() => {
     fechData();
@@ -136,6 +159,13 @@ export default function App() {
         action={action}
         SetOpenModal={SetOpenModal}
         deleteNote={deleteNote}
+        editNote={editNote}
+        ipAddress={ipAddress}
+        contractName={contractName}
+        contractId={contractId}
+        address={address}
+        macAddress={macAddress}
+        note={note}
       />
       <header className="header">
         <label className="fixed" htmlFor="search">
@@ -147,38 +177,43 @@ export default function App() {
         </h1>
       </header>
       <main>
-      <table className="table" cellSpacing="0">
-        <thead>
-          <tr>
-            <th onClick={() => doSort(1)}>Проект</th>
-            <th onClick={() => doSort(2)}>ID ГК</th>
-            <th onClick={() => doSort(3)}>Место размещения</th>
-            <th onClick={() => doSort(4)}>IP адрес</th>
-            <th onClick={() => doSort(5)}>MAC адрес</th>
-            <th onClick={() => doSort(6)}>Дополнительная информация</th>
-            <th onClick={() => doSort(7)}>Сеть</th>
-            <th onClick={() => doSort(8)}>Offline мин.</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {devices.map(({ id, ...props }) => {
-            return (
-              <Notes
-                key={id}
-                {...props}
-                searchFilter={searchFilter}
-                changeTotalOffline={changeTotalOffline}
-                SetOpenModal={SetOpenModal}
-                SetAction={SetAction}
-                SetIpAddress={SetIpAddress}
-              />
-            );
-          })}
-        </tbody>
-      </table>
+        <table className="table" cellSpacing="0">
+          <thead>
+            <tr>
+              <th onClick={() => doSort(1)}>Проект</th>
+              <th onClick={() => doSort(2)}>ID ГК</th>
+              <th onClick={() => doSort(3)}>Место размещения</th>
+              <th onClick={() => doSort(4)}>IP адрес</th>
+              <th onClick={() => doSort(5)}>MAC адрес</th>
+              <th onClick={() => doSort(6)}>Дополнительная информация</th>
+              <th onClick={() => doSort(7)}>Сеть</th>
+              <th onClick={() => doSort(8)}>Offline мин.</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {devices.map(({ id, ...props }) => {
+              return (
+                <Notes
+                  key={id}
+                  {...props}
+                  searchFilter={searchFilter}
+                  changeTotalOffline={changeTotalOffline}
+                  SetOpenModal={SetOpenModal}
+                  SetAction={SetAction}
+                  SetIpAddress={SetIpAddress}
+                  SetContractName={SetContractName}
+                  SetContractId={SetContractId}
+                  SetAddress={SetAddress}
+                  SetMacAddress={SetMacAddress}
+                  SetNote={SetNote}
+                />
+              );
+            })}
+          </tbody>
+        </table>
       </main>
       <footer className="footer">{showLog}</footer>
     </div>

@@ -20,3 +20,38 @@ export const deleteDevice = async (ipAddress) => {
     return null;
   }
 };
+
+export const editDevice = async (
+  ipAddress,
+  newContractName,
+  newContractId,
+  newAddress,
+  newMacAddress,
+  newNote
+) => {
+  newContractName == ""? newContractName = "-": null
+  newContractId == ""? newContractId = "-": null
+  newAddress == ""? newAddress = "-": null
+  newMacAddress == ""? newMacAddress = "-": null
+  newNote == ""? newNote = "-": null
+  try {
+    const str = await axios.put(
+      "http://localhost:5233/Device?ipAddress=" +
+        ipAddress +
+        "&contractName=" +
+        newContractName +
+        "&contractId=" +
+        newContractId +
+        "&address=" +
+        newAddress +
+        "&macAddress=" +
+        newMacAddress +
+        "&note=" +
+        newNote
+    );
+    return str.data;
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};

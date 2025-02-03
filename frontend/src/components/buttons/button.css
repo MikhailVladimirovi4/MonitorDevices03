@@ -93,8 +93,9 @@
 .modalBtn {
   width: 40%;
   height: 50%;
+  font-weight: bold;
   margin: 1% 5% 1% 5%;
-  font-size: 2vw;
+  font-size: 1vw;
   outline: none;
   border-radius: 20%;
   text-decoration: none;
