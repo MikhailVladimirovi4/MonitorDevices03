@@ -29,11 +29,11 @@ export const editDevice = async (
   newMacAddress,
   newNote
 ) => {
-  newContractName == ""? newContractName = "-": null
-  newContractId == ""? newContractId = "-": null
-  newAddress == ""? newAddress = "-": null
-  newMacAddress == ""? newMacAddress = "-": null
-  newNote == ""? newNote = "-": null
+  newContractName == "" ? (newContractName = "-") : null;
+  newContractId == "" ? (newContractId = "-") : null;
+  newAddress == "" ? (newAddress = "-") : null;
+  newMacAddress == "" ? (newMacAddress = "-") : null;
+  newNote == "" ? (newNote = "-") : null;
   try {
     const str = await axios.put(
       "http://localhost:5233/Device?ipAddress=" +
@@ -50,6 +50,19 @@ export const editDevice = async (
         newNote
     );
     return str.data;
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};
+
+export const fetchLog = async (ipAddress) => {
+  try {
+    return (
+      await axios.get(
+        "http://localhost:5233/Device/device_log?ipAddress=" + ipAddress
+      )
+    ).data.log.log;
   } catch (e) {
     console.log(e);
     return null;

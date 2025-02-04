@@ -1,7 +1,6 @@
 .deleteBtn {
   width: 95%;
   height: 95%;
-
   border-radius: 100%;
   font-size: 1vw;
   background-color: #dfb2b2;
@@ -10,18 +9,16 @@
   appearance: none;
   touch-action: manipulation;
 }
-
 .deleteBtn:hover {
   background-color: #ed0000;
 }
-
 .deleteBtn:active {
   background-color: #a70000 !important;
-}
-.deleteBtn:disabled {
+}.deleteBtn:disabled {
   background-color: #a4a4a4;
   pointer-events: none;
 }
+
 .editBtn {
   width: 90%;
   height: 80%;
@@ -39,23 +36,20 @@
   appearance: none;
   touch-action: manipulation;
 }
-
 .editBtn:hover {
   background-color: #2e4ecf;
 }
-
 .editBtn:active {
   background-color: #1e0599 !important;
 }
-
 .editBtn:focus-visible {
   box-shadow: 0 0 0 3px lightskyblue;
 }
-
 .editBtn:disabled {
   background-color: #abacad;
   pointer-events: none;
 }
+
 .infoBtn {
   width: 90%;
   height: 80%;
@@ -73,23 +67,20 @@
   appearance: none;
   touch-action: manipulation;
 }
-
 .infoBtn:hover {
   background-color: #cccf2e;
 }
-
 .infoBtn:active {
   background-color: #998f05 !important;
 }
-
 .infoBtn:focus-visible {
   box-shadow: 0 0 0 3px rgb(233, 250, 135);
 }
-
 .infoBtn:disabled {
   background-color: #abacad;
   pointer-events: none;
 }
+
 .modalBtn {
   width: 40%;
   height: 50%;
@@ -107,11 +98,9 @@
   appearance: none;
   touch-action: manipulation;
 }
-
 .modalBtn:hover {
   background-color: #7e7e71;
 }
-
 .modalBtn:active {
   background-color: #e6e6d4 !important;
   border-color: #000000;

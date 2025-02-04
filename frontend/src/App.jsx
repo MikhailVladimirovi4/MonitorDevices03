@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { fetchDevices, deleteDevice, editDevice } from "./services/device";
+import {
+  fetchDevices,
+  deleteDevice,
+  editDevice,
+  fetchLog,
+} from "./services/device";
 import Notes from "./components/notes/Notes.jsx";
 import useInput from "./services/useInput.js";
 import Modal from "./components/modals/modal.jsx";
@@ -14,18 +19,18 @@ export default function App() {
   const searchFilter = useInput();
   const [numberNotes, setNumberNotes] = useState(0);
   const [totalOffline, setTotalOffline] = useState(0);
-  const [openModal, SetOpenModal] = useState(false);
-  const [action, SetAction] = useState("");
-  const [createdAt, SetCreatedAt] = useState("");
-  const [ipAddress, SetIpAddress] = useState("");
-  const [contractName, SetContractName] = useState("");
-  const [contractId, SetContractId] = useState("");
-  const [address, SetAddress] = useState("");
-  const [macAddress, SetMacAddress] = useState("");
-  const [note, SetNote] = useState("");
-  const [noteLog, SetNoteLog] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [action, setAction] = useState("");
+  const [createdAt, setCreatedAt] = useState("");
+  const [ipAddress, setIpAddress] = useState("");
+  const [contractName, setContractName] = useState("");
+  const [contractId, setContractId] = useState("");
+  const [address, setAddress] = useState("");
+  const [macAddress, setMacAddress] = useState("");
+  const [note, setNote] = useState("");
+  const [noteLog, setNoteLog] = useState([]);
 
-  const fechData = async () => {
+  const fetchData = async () => {
     try {
       const data = await fetchDevices();
       {
@@ -84,10 +89,19 @@ export default function App() {
             )
           : null;
       }
-      console.log("updateDevices");
+      console.log("update");
       setNumberNotes(data.length);
       changeTotalOffline(data);
       setDevices(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const fetchLogNote = async (ipAddress) => {
+    try {
+      const log = await fetchLog(ipAddress);
+      setNoteLog(log);
     } catch (e) {
       console.log(e);
     }
@@ -129,15 +143,25 @@ export default function App() {
     address,
     note
   ) {
-    SetAction(action);
-    SetCreatedAt(createdAt);
-    SetIpAddress(ipAddress);
-    SetContractName(contractName);
-    SetContractId(contractId);
-    SetAddress(address);
-    SetMacAddress(macAddress);
-    SetNote(note);
-    SetOpenModal(true);
+    setAction(action);
+    setIpAddress(ipAddress);
+
+    {
+      action == "edit"
+        ? (setContractName(contractName),
+          setContractId(contractId),
+          setAddress(address),
+          setMacAddress(macAddress),
+          setNote(note))
+        : null;
+    }
+    {
+      action == "info"
+        ? (setCreatedAt(createdAt), fetchLogNote(ipAddress))
+        : null;
+    }
+
+    setOpenModal(true);
   }
   function editNote(
     ipAddress,
@@ -157,12 +181,9 @@ export default function App() {
     );
     response.then((value) => actionComplete(value));
   }
-  function showLogNote() {
-    console.log(createdAt + " " + ipAddress);
-  }
 
   useEffect(() => {
-    fechData();
+    fetchData();
   }, [updateData, sortParam, sortDirection]);
 
   useEffect(() => {
@@ -181,7 +202,7 @@ export default function App() {
       <Modal
         open={openModal}
         action={action}
-        SetOpenModal={SetOpenModal}
+        SetOpenModal={setOpenModal}
         deleteNote={deleteNote}
         editNote={editNote}
         ipAddress={ipAddress}
