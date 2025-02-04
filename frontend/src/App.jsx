@@ -16,12 +16,14 @@ export default function App() {
   const [totalOffline, setTotalOffline] = useState(0);
   const [openModal, SetOpenModal] = useState(false);
   const [action, SetAction] = useState("");
+  const [createdAt, SetCreatedAt] = useState("");
   const [ipAddress, SetIpAddress] = useState("");
   const [contractName, SetContractName] = useState("");
   const [contractId, SetContractId] = useState("");
   const [address, SetAddress] = useState("");
   const [macAddress, SetMacAddress] = useState("");
   const [note, SetNote] = useState("");
+  const [noteLog, SetNoteLog] = useState([]);
 
   const fechData = async () => {
     try {
@@ -118,6 +120,25 @@ export default function App() {
     const response = deleteDevice(ipAddress);
     response.then((value) => actionComplete(value));
   }
+  function OpenModalFromNote(
+    action,
+    createdAt,
+    ipAddress,
+    contractName,
+    contractId,
+    address,
+    note
+  ) {
+    SetAction(action);
+    SetCreatedAt(createdAt);
+    SetIpAddress(ipAddress);
+    SetContractName(contractName);
+    SetContractId(contractId);
+    SetAddress(address);
+    SetMacAddress(macAddress);
+    SetNote(note);
+    SetOpenModal(true);
+  }
   function editNote(
     ipAddress,
     newContractName,
@@ -135,6 +156,9 @@ export default function App() {
       newNote
     );
     response.then((value) => actionComplete(value));
+  }
+  function showLogNote() {
+    console.log(createdAt + " " + ipAddress);
   }
 
   useEffect(() => {
@@ -166,6 +190,8 @@ export default function App() {
         address={address}
         macAddress={macAddress}
         note={note}
+        createdAt={createdAt}
+        noteLog={noteLog}
       />
       <header className="header">
         <label className="fixed" htmlFor="search">
@@ -200,15 +226,7 @@ export default function App() {
                   key={id}
                   {...props}
                   searchFilter={searchFilter}
-                  changeTotalOffline={changeTotalOffline}
-                  SetOpenModal={SetOpenModal}
-                  SetAction={SetAction}
-                  SetIpAddress={SetIpAddress}
-                  SetContractName={SetContractName}
-                  SetContractId={SetContractId}
-                  SetAddress={SetAddress}
-                  SetMacAddress={SetMacAddress}
-                  SetNote={SetNote}
+                  OpenModalFromNote={OpenModalFromNote}
                 />
               );
             })}

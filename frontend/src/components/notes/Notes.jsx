@@ -12,15 +12,20 @@ export default function Notes({
   note,
   timeOffline,
   searchFilter,
-  SetOpenModal,
-  SetAction,
-  SetIpAddress,
-  SetContractName,
-  SetContractId,
-  SetAddress,
-  SetMacAddress,
-  SetNote,
+  OpenModalFromNote,
 }) {
+  function makeAction(action) {
+    OpenModalFromNote(
+      action,
+      createdAt,
+      ipAddress,
+      contractName,
+      contractId,
+      address,
+      note
+    );
+  }
+
   return (
     <Fragment>
       {contractName.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
@@ -39,39 +44,17 @@ export default function Notes({
           <td className={isConnected}>*</td>
           <td className="textOffline">{timeOffline}</td>
           <td>
-            <Button
-              style={"infoBtn"}
-              onClick={() => (
-                SetOpenModal(true), SetAction("info"), SetIpAddress(ipAddress)
-              )}
-            >
+            <Button style={"infoBtn"} onClick={() => makeAction("info")}>
               Info
             </Button>
           </td>
           <td>
-            <Button
-              style={"editBtn"}
-              onClick={() => (
-                SetAction("edit"),
-                SetIpAddress(ipAddress),
-                SetContractName(contractName),
-                SetContractId(contractId),
-                SetAddress(address),
-                SetMacAddress(macAddress),
-                SetNote(note),
-                SetOpenModal(true)
-              )}
-            >
+            <Button style={"editBtn"} onClick={() => makeAction("edit")}>
               Edit
             </Button>
           </td>
           <td>
-            <Button
-              style={"deleteBtn"}
-              onClick={() => (
-                SetOpenModal(true), SetAction("delete"), SetIpAddress(ipAddress)
-              )}
-            >
+            <Button style={"deleteBtn"} onClick={() => makeAction("delete")}>
               X
             </Button>
           </td>

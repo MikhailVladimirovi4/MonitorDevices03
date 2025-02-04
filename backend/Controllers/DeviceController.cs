@@ -34,7 +34,7 @@ namespace backend.Controllers
         [HttpPut]
         public async Task<ActionResult<string>> Update(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
         {
-            string result = await _devicesRepository.UpdateDevice(ipAddress, contractName, contractId, address, macAddress, note, ct);
+            string result = await _devicesRepository.UpdateDevice(GetStringResult(ipAddress), GetStringResult(contractName), GetStringResult(contractId), GetStringResult(address), GetStringResult(macAddress), GetStringResult(note), ct);
 
             return Ok(result);
         }
@@ -53,6 +53,14 @@ namespace backend.Controllers
             GetDeviceLogResponse response = new(await _devicesRepository.GetDeviceLog(ipAddress, ct));
 
             return Ok(response);
+        }
+
+        private string GetStringResult(string text)
+        {
+            if (text != "-")
+                return text;
+
+            return string.Empty;
         }
     }
 }

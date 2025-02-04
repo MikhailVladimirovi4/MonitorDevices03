@@ -1,6 +1,7 @@
 import "./modal.css";
 import useInput from "../../services/useInput";
 import Button from "../buttons/Button";
+import moment from "moment"
 
 export default function Modal({
   open,
@@ -14,6 +15,8 @@ export default function Modal({
   address,
   macAddress,
   note,
+  createdAt,
+  noteLog,
 }) {
   const inputIpAddress = useInput();
   const inputContractName = useInput();
@@ -124,6 +127,7 @@ export default function Modal({
             ) : null}
           </>
         ) : null}
+        {action == "info" ? console.log(moment(createdAt).format("DD/MM/YYYY") + " " + noteLog) : null}
 
         <Button style="modalBtn" onClick={() => SetOpenModal(false)}>
           Назад
