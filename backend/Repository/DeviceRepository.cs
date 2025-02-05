@@ -17,6 +17,9 @@ namespace backend.Repository
 
         public async Task<string> Create(CreateDeviceDto createDeviceDto, CancellationToken ct)
         {
+            if (createDeviceDto.IpAddress == string.Empty)
+                return "Для внесения устройства на мониторинг необходимо ввести ip-адрес";
+
             string result;
             bool isIpAddressUse = false;
 
@@ -40,7 +43,7 @@ namespace backend.Repository
             }
             else
             {
-                result = "Error: в таблице имеется устройство с ip адресом: " + createDeviceDto.IpAddress + ".";
+                result = "Error: в таблице имеется устройство с ip-адресом: " + createDeviceDto.IpAddress + ".";
             }
 
             return result;

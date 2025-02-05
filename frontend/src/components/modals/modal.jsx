@@ -8,6 +8,7 @@ export default function Modal({
   SetOpenModal,
   deleteNote,
   editNote,
+  addNote,
   ipAddress,
   contractName,
   contractId,
@@ -30,7 +31,7 @@ export default function Modal({
             <p>Подтвердите удаление:</p>
             <Button
               style="modalBtn"
-              onClick={() => (SetOpenModal(false), deleteNote())}
+              onClick={() => (SetOpenModal(false), deleteNote(ipAddress))}
             >
               Удалить
             </Button>
@@ -107,7 +108,6 @@ export default function Modal({
                 <Button
                   style="modalBtn"
                   onClick={() => (
-                    SetOpenModal(false),
                     editNote(
                       ipAddress,
                       inputContractName.value,
@@ -115,13 +115,30 @@ export default function Modal({
                       inputAddress.value,
                       inputMacAddress.value,
                       inputNote.value
-                    )
+                    ),
+                    SetOpenModal(false)
                   )}
                 >
                   Изменить
                 </Button>
               </>
-            ) : null}
+            ) : (
+              <Button
+                style="modalBtn"
+                onClick={() => (
+                  addNote(
+                    inputContractName.value,
+                    inputContractId.value,
+                    inputAddress.value,
+                    inputIpAddress.value,
+                    inputMacAddress.value
+                  ),
+                  SetOpenModal(false)
+                )}
+              >
+                Добавить
+              </Button>
+            )}
           </>
         ) : null}
         <Button style="modalBtn" onClick={() => SetOpenModal(false)}>

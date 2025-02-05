@@ -5,12 +5,14 @@ import {
   editDevice,
   fetchLog,
   deleteLog,
+  addDevice,
 } from "./services/device";
 import useInput from "./services/useInput.js";
 import Modal from "./components/modals/modal.jsx";
 import Table from "./components/table/Table.jsx";
 import Header from "./components/header/header.jsx";
 import DeviceLog from "./components/noteLog/deviceLog.jsx";
+import Button from "./components/buttons/button.jsx";
 
 export default function App() {
   const [devices, setDevices] = useState([]);
@@ -135,8 +137,19 @@ export default function App() {
     setInterval(() => setActionResult("Логирование:"), 10000);
   }
 
-  function deleteNote() {
+  function deleteNote(ipAddress) {
     const response = deleteDevice(ipAddress);
+    response.then((value) => actionComplete(value));
+  }
+
+  function addNote(contractName, contractId, address, ipAddress, macAddress) {
+    const response = addDevice(
+      contractName,
+      contractId,
+      address,
+      ipAddress,
+      macAddress
+    );
     response.then((value) => actionComplete(value));
   }
 
@@ -219,6 +232,7 @@ export default function App() {
         SetOpenModal={setOpenModal}
         deleteNote={deleteNote}
         editNote={editNote}
+        addNote={addNote}
         ipAddress={ipAddress}
         contractName={contractName}
         contractId={contractId}
@@ -250,7 +264,15 @@ export default function App() {
           />
         )}
       </main>
-      <footer className="footer">{actionResult}</footer>
+      <footer className="footer">
+        {actionResult}
+        <Button
+          style={"addBtn"}
+          onClick={() => (setAction("add"), setOpenModal(true))}
+        >
+          Добавить устройство
+        </Button>
+      </footer>
     </div>
   );
 }

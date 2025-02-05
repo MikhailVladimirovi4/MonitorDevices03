@@ -27,15 +27,24 @@ namespace backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateDeviceRequest request, CancellationToken ct)
         {
-            return Ok(await _devicesRepository.Create(new CreateDeviceDto(request.ContractName, request.ContractId, request.Address, request.IpAddress, request.MacAddress), ct));
+            return Ok(await _devicesRepository.Create(new CreateDeviceDto(
+                GetStringResult(request.ContractName),
+                GetStringResult(request.ContractId),
+                GetStringResult(request.Address),
+                GetStringResult(request.IpAddress),
+                GetStringResult(request.MacAddress)), ct));
         }
 
         [HttpPut]
         public async Task<ActionResult<string>> Update(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
         {
-            string result = await _devicesRepository.Update(GetStringResult(ipAddress), GetStringResult(contractName), GetStringResult(contractId), GetStringResult(address), GetStringResult(macAddress), GetStringResult(note), ct);
-
-            return Ok(result);
+            return Ok(await _devicesRepository.Update(
+                GetStringResult(ipAddress),
+                GetStringResult(contractName),
+                GetStringResult(contractId),
+                GetStringResult(address),
+                GetStringResult(macAddress),
+                GetStringResult(note), ct));
         }
 
         [HttpDelete]
@@ -62,7 +71,7 @@ namespace backend.Controllers
             return Ok(result);
         }
 
-        private string GetStringResult(string text)
+        private static string GetStringResult(string text)
         {
             if (text != "-")
                 return text;

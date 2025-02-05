@@ -80,3 +80,30 @@ export const deleteLog = async (ipAddress) => {
     return null;
   }
 };
+
+export const addDevice = async (
+  contractName,
+  contractId,
+  address,
+  ipAddress,
+  macAddress
+) => {
+  contractName == "" ? (contractName = "-") : null;
+  contractId == "" ? (contractId = "-") : null;
+  address == "" ? (address = "-") : null;
+  ipAddress == "" ? (ipAddress = "-") : null;
+  macAddress == "" ? (macAddress = "-") : null;
+  try {
+    const str = await axios.post("http://localhost:5233/Device", {
+      contractName,
+      contractId,
+      address,
+      ipAddress,
+      macAddress,
+    });
+    return str.data;
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};
