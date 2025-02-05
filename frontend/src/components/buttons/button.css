@@ -14,7 +14,8 @@
 }
 .deleteBtn:active {
   background-color: #a70000 !important;
-}.deleteBtn:disabled {
+}
+.deleteBtn:disabled {
   background-color: #a4a4a4;
   pointer-events: none;
 }
@@ -105,12 +106,37 @@
   background-color: #e6e6d4 !important;
   border-color: #000000;
 }
-
 .modalBtn:focus-visible {
   box-shadow: 0 0 0 3px rgb(233, 250, 135);
 }
-
 .modalBtn:disabled {
+  background-color: #abacad;
+  pointer-events: none;
+}
+
+.logBtn {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1vw;
+  font-weight: bold;
+  border-radius: 10%;
+  text-decoration: underline;
+  color: #1d1d1d;
+  background-color: #a9ad9d;
+  box-shadow: 0 2px #2c2c2c;
+  cursor: pointer;
+}
+.logBtn:hover {
+  background-color: #7e7e71;
+}
+.logBtn:active {
+  background-color: #e6e6d4 !important;
+  border-color: #000000;
+}
+.logBtn:focus-visible {
+  box-shadow: 0 0 0 3px rgb(233, 250, 135);
+}
+.logBtn:disabled {
   background-color: #abacad;
   pointer-events: none;
 }

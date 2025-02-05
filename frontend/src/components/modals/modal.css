@@ -8,6 +8,7 @@
   width: 100%;
   display: flex;
 }
+
 .inputmodal {
   font-size: 1vw;
   border: 1px solid #150505;
@@ -16,6 +17,7 @@
   width: 100%;
   background-color: rgb(206, 206, 204);
 }
+
 .delete {
   align-content: center;
   margin: auto;
@@ -29,6 +31,7 @@
   box-sizing: border-box;
   font-size: 2vw;
 }
+
 .edit {
   align-content: center;
   margin: auto;
@@ -37,17 +40,6 @@
   min-height: 20px;
   padding: 1rem;
   border: 3px solid #026c96;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
-.info {
-  align-content: center;
-  margin: auto;
-  background-color: rgba(226, 238, 160, 1);
-  min-width: 50px;
-  min-height: 20px;
-  padding: 1rem;
-  border: 3px solid #e8ec00;
   border-radius: 10px;
   box-sizing: border-box;
 }

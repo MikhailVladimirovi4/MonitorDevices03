@@ -143,7 +143,7 @@ namespace backend.Repository
 
                 await _dbContext.SaveChangesAsync(ct);
 
-                result = "История извенений состояния сети для ip-адреса: " + ipAddress + " удалена.";
+                result = "История изменений состояния сети для ip-адреса: " + ipAddress + " удалена.";
             }
             catch (Exception ex)
             {

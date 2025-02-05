@@ -1,5 +1,6 @@
+import "./notes.css";
 import { Fragment } from "react";
-import Button from "../buttons/Button";
+import Button from "../buttons/button";
 
 export default function Notes({
   address,
@@ -12,10 +13,10 @@ export default function Notes({
   note,
   timeOffline,
   searchFilter,
-  OpenModalFromNote,
+  makeActionNote,
 }) {
   function makeAction(action) {
-    OpenModalFromNote(
+    makeActionNote(
       action,
       createdAt,
       ipAddress,

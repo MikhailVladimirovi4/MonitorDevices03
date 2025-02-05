@@ -1,0 +1,70 @@
+.textAddress {
+  text-align: left;
+  width: 30%;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.textNote {
+  width: 30%;
+  text-align: left;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.textIp {
+  width: 8%;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.textMac {
+  width: 8%;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.textName {
+  width: 8%;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.textId {
+  width: 8%;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.textOffline {
+  width: 2%;
+  text-align: right;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+  color: #ff0000;
+}
+
+.offline {
+  text-align: center;
+  width: 1%;
+  font-size: 20px;
+  color: #ff0000;
+}
+
+.online {
+  text-align: center;
+  width: 1%;
+  font-size: 20px;
+  color: #00aa25;
+}

@@ -4,21 +4,25 @@ import {
   deleteDevice,
   editDevice,
   fetchLog,
+  deleteLog,
 } from "./services/device";
-import Notes from "./components/notes/Notes.jsx";
 import useInput from "./services/useInput.js";
 import Modal from "./components/modals/modal.jsx";
+import Table from "./components/table/Table.jsx";
+import Header from "./components/header/header.jsx";
+import DeviceLog from "./components/noteLog/deviceLog.jsx";
 
 export default function App() {
   const [devices, setDevices] = useState([]);
   const [updateData, setUpdateData] = useState(false);
   const updateInterval = 60000;
-  const [showLog, setShowLog] = useState("Логирование:");
+  const [actionResult, setActionResult] = useState("Логирование:");
   const [sortParam, setSortParam] = useState(4);
   const [sortDirection, setSortDirection] = useState(1);
   const searchFilter = useInput();
   const [numberNotes, setNumberNotes] = useState(0);
   const [totalOffline, setTotalOffline] = useState(0);
+  const [showLog, setShowLog] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [action, setAction] = useState("");
   const [createdAt, setCreatedAt] = useState("");
@@ -127,14 +131,16 @@ export default function App() {
 
   function actionComplete(text) {
     setUpdateData((prev) => !prev);
-    setShowLog("Логирование: " + text);
-    setInterval(() => setShowLog("Логирование:"), 10000);
+    setActionResult("Логирование: " + text);
+    setInterval(() => setActionResult("Логирование:"), 10000);
   }
+
   function deleteNote() {
     const response = deleteDevice(ipAddress);
     response.then((value) => actionComplete(value));
   }
-  function OpenModalFromNote(
+
+  function makeActionNote(
     action,
     createdAt,
     ipAddress,
@@ -144,25 +150,28 @@ export default function App() {
     note
   ) {
     setAction(action);
+    setContractId(contractId);
     setIpAddress(ipAddress);
 
     {
       action == "edit"
         ? (setContractName(contractName),
-          setContractId(contractId),
           setAddress(address),
           setMacAddress(macAddress),
-          setNote(note))
+          setNote(note),
+          setOpenModal(true))
         : null;
     }
     {
       action == "info"
-        ? (setCreatedAt(createdAt), fetchLogNote(ipAddress))
+        ? (setCreatedAt(createdAt), fetchLogNote(ipAddress), setShowLog(true))
         : null;
     }
-
-    setOpenModal(true);
+    {
+      action == "delete" ? setOpenModal(true) : null;
+    }
   }
+
   function editNote(
     ipAddress,
     newContractName,
@@ -179,6 +188,11 @@ export default function App() {
       newMacAddress,
       newNote
     );
+    response.then((value) => actionComplete(value));
+  }
+
+  function resetLog(ipAddress) {
+    const response = deleteLog(ipAddress);
     response.then((value) => actionComplete(value));
   }
 
@@ -211,50 +225,32 @@ export default function App() {
         address={address}
         macAddress={macAddress}
         note={note}
-        createdAt={createdAt}
-        noteLog={noteLog}
       />
-      <header className="header">
-        <label className="fixed" htmlFor="search">
-          Поиск...
-        </label>
-        <input type="text" id="search" className="filter" {...searchFilter} />
-        <h1 className="fixedNotes">
-          {"Всего: " + numberNotes + ". Offline: " + totalOffline}
-        </h1>
-      </header>
+      <Header
+        searchFilter={searchFilter}
+        numberNotes={numberNotes}
+        totalOffline={totalOffline}
+      />
       <main>
-        <table className="table" cellSpacing="0">
-          <thead>
-            <tr>
-              <th onClick={() => doSort(1)}>Проект</th>
-              <th onClick={() => doSort(2)}>ID ГК</th>
-              <th onClick={() => doSort(3)}>Место размещения</th>
-              <th onClick={() => doSort(4)}>IP адрес</th>
-              <th onClick={() => doSort(5)}>MAC адрес</th>
-              <th onClick={() => doSort(6)}>Дополнительная информация</th>
-              <th onClick={() => doSort(7)}>Сеть</th>
-              <th onClick={() => doSort(8)}>Offline мин.</th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {devices.map(({ id, ...props }) => {
-              return (
-                <Notes
-                  key={id}
-                  {...props}
-                  searchFilter={searchFilter}
-                  OpenModalFromNote={OpenModalFromNote}
-                />
-              );
-            })}
-          </tbody>
-        </table>
+        {showLog ? (
+          <DeviceLog
+            setShowLog={setShowLog}
+            ipAddress={ipAddress}
+            createdAt={createdAt}
+            noteLog={noteLog}
+            contractId={contractId}
+            resetLog={resetLog}
+          />
+        ) : (
+          <Table
+            doSort={doSort}
+            devices={devices}
+            searchFilter={searchFilter}
+            makeActionNote={makeActionNote}
+          />
+        )}
       </main>
-      <footer className="footer">{showLog}</footer>
+      <footer className="footer">{actionResult}</footer>
     </div>
   );
 }

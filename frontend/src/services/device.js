@@ -68,3 +68,15 @@ export const fetchLog = async (ipAddress) => {
     return null;
   }
 };
+
+export const deleteLog = async (ipAddress) => {
+  try {
+    const str = await axios.put(
+      "http://localhost:5233/Device/device_log?ipAddress=" + ipAddress
+    );
+    return str.data;
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};

@@ -1,7 +1,6 @@
 import "./modal.css";
 import useInput from "../../services/useInput";
-import Button from "../buttons/Button";
-import moment from "moment";
+import Button from "../buttons/button";
 
 export default function Modal({
   open,
@@ -15,8 +14,6 @@ export default function Modal({
   address,
   macAddress,
   note,
-  createdAt,
-  noteLog,
 }) {
   const inputIpAddress = useInput();
   const inputContractName = useInput();
@@ -127,24 +124,8 @@ export default function Modal({
             ) : null}
           </>
         ) : null}
-        {action == "info" ? (
-          <div>
-            <p className="heading">
-              IP: {ipAddress} внесено {moment(createdAt).format("DD/MM/YYYY")}
-            </p>
-            {noteLog.length == 0 ? (
-              <p>Записи отсутствуют.</p>
-            ) : (
-              <ol>
-                {noteLog.map((text) => (
-                  <li key={text}>{text}</li>
-                ))}
-              </ol>
-            )}
-          </div>
-        ) : null}
         <Button style="modalBtn" onClick={() => SetOpenModal(false)}>
-          Назад
+          Отмена
         </Button>
       </div>
     </div>
