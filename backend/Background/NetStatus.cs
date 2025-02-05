@@ -24,7 +24,7 @@ namespace backend.Background
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                _devices = await _deviceRepository.GetNetStatusDevices(stoppingToken);
+                _devices = await _deviceRepository.GetNetStatusAllDevices(stoppingToken);
 
                 await RunCheck(stoppingToken);
                 await Task.Delay(_timeOut, stoppingToken);

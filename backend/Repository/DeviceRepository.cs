@@ -67,7 +67,7 @@ namespace backend.Repository
             return devices;
         }
 
-        public async Task<string> UpdateDevice(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
+        public async Task<string> Update(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
         {
             await _dbContext.Devices
                 .Where(d => d.IpAddress == ipAddress).ExecuteUpdateAsync(s => s
@@ -82,7 +82,7 @@ namespace backend.Repository
             return "Данные устройтсва с ip-адресом: " + ipAddress + " изменены.";
         }
 
-        public async Task<List<DeviceNetworkDto>> GetNetStatusDevices(CancellationToken ct)
+        public async Task<List<DeviceNetworkDto>> GetNetStatusAllDevices(CancellationToken ct)
         {
             var devices = await _dbContext.Devices
                 .Select(d => new DeviceNetworkDto(d.IpAddress, d.IsConnected, d.TimeOffline, d.Log))
@@ -113,7 +113,7 @@ namespace backend.Repository
             return devices;
         }
 
-        public async Task<DeviceLogDto> GetDeviceLog(string ipAddress, CancellationToken ct)
+        public async Task<DeviceLogDto> GetLog(string ipAddress, CancellationToken ct)
         {
             List<DeviceLogDto> log = await _dbContext.Devices
                 .Where(d => d.IpAddress == ipAddress).Select(l => new DeviceLogDto(l.Log)).ToListAsync(ct);
@@ -129,6 +129,28 @@ namespace backend.Repository
             await _dbContext.SaveChangesAsync(ct);
 
             return "Счетчик минут недоступности сброшен";
+        }
+
+        public async Task<string> ResetLog(string ipAddress, CancellationToken ct)
+        {
+            string result;
+
+            try
+            {
+                await _dbContext.Devices
+                .Where(d => d.IpAddress == ipAddress).ExecuteUpdateAsync(s => s
+                .SetProperty(d => d.Log, d => new List<string>()), ct);
+
+                await _dbContext.SaveChangesAsync(ct);
+
+                result = "История извенений состояния сети для ip-адреса: " + ipAddress + " удалена.";
+            }
+            catch (Exception ex)
+            {
+                result = ex.Message;
+            }
+
+            return result;
         }
     }
 }

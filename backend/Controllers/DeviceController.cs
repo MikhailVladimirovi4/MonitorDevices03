@@ -2,7 +2,6 @@
 using backend.Models.DTO;
 using backend.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace backend.Controllers
 {
@@ -34,7 +33,7 @@ namespace backend.Controllers
         [HttpPut]
         public async Task<ActionResult<string>> Update(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
         {
-            string result = await _devicesRepository.UpdateDevice(GetStringResult(ipAddress), GetStringResult(contractName), GetStringResult(contractId), GetStringResult(address), GetStringResult(macAddress), GetStringResult(note), ct);
+            string result = await _devicesRepository.Update(GetStringResult(ipAddress), GetStringResult(contractName), GetStringResult(contractId), GetStringResult(address), GetStringResult(macAddress), GetStringResult(note), ct);
 
             return Ok(result);
         }
@@ -50,9 +49,17 @@ namespace backend.Controllers
         [HttpGet("device_log")]
         public async Task<ActionResult<GetDeviceLogResponse>> GetDeviceLog(string ipAddress, CancellationToken ct)
         {
-            GetDeviceLogResponse response = new(await _devicesRepository.GetDeviceLog(ipAddress, ct));
+            GetDeviceLogResponse response = new(await _devicesRepository.GetLog(ipAddress, ct));
 
             return Ok(response);
+        }
+
+        [HttpPut("device_log")]
+        public async Task<ActionResult<string>> ResetLog(string ipAddress, CancellationToken ct)
+        {
+            string result = await _devicesRepository.ResetLog(ipAddress, ct);
+
+            return Ok(result);
         }
 
         private string GetStringResult(string text)
