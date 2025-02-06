@@ -24,14 +24,14 @@ namespace backend.Background
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                _devices = await _deviceRepository.GetNetStatusAllDevices(stoppingToken);
+                _devices = await _deviceRepository.GetNetStatusAllDevicesAsync(stoppingToken);
 
-                await RunCheck(stoppingToken);
+                await RunCheckAsync(stoppingToken);
                 await Task.Delay(_timeOut, stoppingToken);
             }
         }
 
-        private async Task RunCheck(CancellationToken stoppingToken)
+        private async Task RunCheckAsync(CancellationToken stoppingToken)
         {
             foreach (var device in _devices)
             {
@@ -55,7 +55,7 @@ namespace backend.Background
 
                 if (_isWrite)
                 {
-                    await _deviceRepository.UpdateNetStatus(device.IpAddress, currentNetStatus, newTimeOffline, newLog, stoppingToken);
+                    await _deviceRepository.UpdateNetStatusAsync(device.IpAddress, currentNetStatus, newTimeOffline, newLog, stoppingToken);
                 }
             }
         }

@@ -17,17 +17,17 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<GetDevicesResponse>>> Get(CancellationToken ct)
+        public async Task<ActionResult<List<GetDevicesResponse>>> GetAsync(CancellationToken ct)
         {
-            GetDevicesResponse response = new(await _devicesRepository.Get(ct));
+            GetDevicesResponse response = new(await _devicesRepository.GetAsync(ct));
 
             return Ok(response);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateDeviceRequest request, CancellationToken ct)
+        public async Task<IActionResult> CreateAsync([FromBody] CreateDeviceRequest request, CancellationToken ct)
         {
-            return Ok(await _devicesRepository.Create(new CreateDeviceDto(
+            return Ok(await _devicesRepository.CreateAsync(new CreateDeviceDto(
                 GetStringResult(request.ContractName),
                 GetStringResult(request.ContractId),
                 GetStringResult(request.Address),
@@ -36,9 +36,9 @@ namespace backend.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<string>> Update(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
+        public async Task<ActionResult<string>> UpdateAsync(string ipAddress, string contractName, string contractId, string address, string macAddress, string note, CancellationToken ct)
         {
-            return Ok(await _devicesRepository.Update(
+            return Ok(await _devicesRepository.UpdateAsync(
                 GetStringResult(ipAddress),
                 GetStringResult(contractName),
                 GetStringResult(contractId),
@@ -48,25 +48,25 @@ namespace backend.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<string>> Delete(string ipAddress, CancellationToken ct)
+        public async Task<ActionResult<string>> DeleteAsync(string ipAddress, CancellationToken ct)
         {
-            string result = await _devicesRepository.Delete(ipAddress, ct);
+            string result = await _devicesRepository.DeleteAsync(ipAddress, ct);
 
             return Ok(result);
         }
 
         [HttpGet("device_log")]
-        public async Task<ActionResult<GetDeviceLogResponse>> GetDeviceLog(string ipAddress, CancellationToken ct)
+        public async Task<ActionResult<GetDeviceLogResponse>> GetDeviceLogAsync(string ipAddress, CancellationToken ct)
         {
-            GetDeviceLogResponse response = new(await _devicesRepository.GetLog(ipAddress, ct));
+            GetDeviceLogResponse response = new(await _devicesRepository.GetLogAsync(ipAddress, ct));
 
             return Ok(response);
         }
 
         [HttpPut("device_log")]
-        public async Task<ActionResult<string>> ResetLog(string ipAddress, CancellationToken ct)
+        public async Task<ActionResult<string>> ResetLogAsync(string ipAddress, CancellationToken ct)
         {
-            string result = await _devicesRepository.ResetLog(ipAddress, ct);
+            string result = await _devicesRepository.ResetLogAsync(ipAddress, ct);
 
             return Ok(result);
         }

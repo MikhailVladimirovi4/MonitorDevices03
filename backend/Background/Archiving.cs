@@ -26,7 +26,7 @@ namespace backend.Background
                 {
                     _month = DateTime.Now.Month;
                     string path = @"C:\MonitorDevices_arhiveOffline_" + _month + "." + DateTime.Now.Year + ".txt";
-                    _devices = await _deviceRepository.GetMonthlyLogData(stoppingToken);
+                    _devices = await _deviceRepository.GetMonthlyLogDataAsync(stoppingToken);
                     string[] data = new string[_devices.Count];
 
                     for (int i = 0; i < data.Length; i++)
@@ -37,14 +37,14 @@ namespace backend.Background
                             + ", было не в сети: " + _devices[i].TimeOffline.ToString() + " минут.";
                     }
 
-                    await CreateArchiveFile(path, data);
-                    Console.WriteLine(_deviceRepository.ResetDataOffline(stoppingToken));
+                    await CreateArchiveFileAsync(path, data);
+                    Console.WriteLine(_deviceRepository.ResetDataOfflineAsync(stoppingToken));
                 }
                 await Task.Delay(_timeOut, stoppingToken);
             }
         }
 
-        private static async Task<string> CreateArchiveFile(string path, string[] data)
+        private static async Task<string> CreateArchiveFileAsync(string path, string[] data)
         {
             try
             {
