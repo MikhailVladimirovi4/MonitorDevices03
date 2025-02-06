@@ -139,3 +139,23 @@
   background-color: #025a02 !important;
   border-color: #000000;
 }
+
+.uploadBtn {
+  position: fixed;
+  right: 15%;
+  bottom: 0.2%;
+  margin: 0;
+  padding: 0.2rem;
+  font-size: 01vw;
+  border-radius: 10%;
+  color: #ffffff;
+  background-color: #7a7f86;
+  cursor: pointer;
+}
+.uploadBtn:hover {
+  background-color: #525458;
+}
+.uploadBtn:active {
+  background-color: #242526 !important;
+  border-color: #000000;
+}

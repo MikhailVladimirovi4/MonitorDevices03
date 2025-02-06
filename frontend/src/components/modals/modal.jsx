@@ -1,6 +1,6 @@
 import "./modal.css";
 import useInput from "../../services/useInput";
-import Button from "../buttons/button";
+import Button from "../buttons/Button";
 
 export default function Modal({
   open,

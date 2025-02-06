@@ -1,6 +1,6 @@
 import "./notes.css";
 import { Fragment } from "react";
-import Button from "../buttons/button";
+import Button from "../buttons/Button";
 
 export default function Notes({
   address,

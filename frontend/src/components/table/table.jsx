@@ -1,5 +1,5 @@
 import "./table.css";
-import Notes from "../notes/notes";
+import Notes from "../notes/Notes";
 
 export default function Table({
   doSort,

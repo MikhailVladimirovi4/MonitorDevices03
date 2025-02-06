@@ -1,5 +1,5 @@
 import "./deviceLog.css";
-import Button from "../buttons/button";
+import Button from "../buttons/Button";
 import moment from "moment";
 
 export default function DeviceLog({
