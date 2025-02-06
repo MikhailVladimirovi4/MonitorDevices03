@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "backend.Controllers.DeviceController",
-    "Method": "Get",
+    "Method": "GetAsync",
     "RelativePath": "Device",
     "HttpMethod": "GET",
     "IsController": true,
@@ -21,7 +21,7 @@
   },
   {
     "ContainingType": "backend.Controllers.DeviceController",
-    "Method": "Create",
+    "Method": "CreateAsync",
     "RelativePath": "Device",
     "HttpMethod": "POST",
     "IsController": true,
@@ -37,7 +37,7 @@
   },
   {
     "ContainingType": "backend.Controllers.DeviceController",
-    "Method": "Update",
+    "Method": "UpdateAsync",
     "RelativePath": "Device",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -88,7 +88,7 @@
   },
   {
     "ContainingType": "backend.Controllers.DeviceController",
-    "Method": "Delete",
+    "Method": "DeleteAsync",
     "RelativePath": "Device",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -114,7 +114,7 @@
   },
   {
     "ContainingType": "backend.Controllers.DeviceController",
-    "Method": "GetDeviceLog",
+    "Method": "GetDeviceLogAsync",
     "RelativePath": "Device/device_log",
     "HttpMethod": "GET",
     "IsController": true,
@@ -140,7 +140,7 @@
   },
   {
     "ContainingType": "backend.Controllers.DeviceController",
-    "Method": "ResetLog",
+    "Method": "ResetLogAsync",
     "RelativePath": "Device/device_log",
     "HttpMethod": "PUT",
     "IsController": true,

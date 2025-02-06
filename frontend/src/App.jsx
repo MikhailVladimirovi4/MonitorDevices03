@@ -134,7 +134,7 @@ export default function App() {
   function actionComplete(text) {
     setUpdateData((prev) => !prev);
     setActionResult("Логирование: " + text);
-    setInterval(() => setActionResult("Логирование:"), 10000);
+    setInterval(() => setActionResult("Логирование:"), updateInterval);
   }
 
   function deleteNote(ipAddress) {

@@ -89,6 +89,7 @@ namespace backend.Repository
         {
             var devices = await _dbContext.Devices
                 .Select(d => new DeviceNetworkDto(d.IpAddress, d.IsConnected, d.TimeOffline, d.Log))
+                .AsNoTracking()
                 .ToListAsync(ct);
 
             return devices;
@@ -111,8 +112,9 @@ namespace backend.Repository
         {
             var devices = await _dbContext.Devices
                 .Select(d => new DeviceMonthLogDto(d.ContractName, d.ContractId, d.IpAddress, d.TimeOffline))
+                .AsNoTracking()
                 .ToListAsync(ct);
-
+         
             return devices;
         }
 

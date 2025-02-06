@@ -65,7 +65,7 @@ namespace backend.Background
 
             try
             {
-                Console.WriteLine("PING ip-address: " + host);
+//                Console.WriteLine("PING ip-address: " + host);
 
                 Ping ping = new();
                 PingReply ResultPing = await ping.SendPingAsync(host, responseTime);
@@ -77,7 +77,7 @@ namespace backend.Background
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                Console.WriteLine("Ошибка проверки статуса сети ip-address: " + host);
+//                Console.WriteLine("Ошибка проверки статуса сети ip-address: " + host);
             }
 
             return "offline";
