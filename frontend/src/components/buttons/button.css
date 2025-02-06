@@ -102,21 +102,21 @@
 
 .logBtn {
   margin: 0;
-  padding: 1rem;
+  padding: 0.3rem;
   font-size: 1vw;
   font-weight: bold;
   border-radius: 10%;
   text-decoration: underline;
-  color: #1d1d1d;
-  background-color: #a9ad9d;
+  color: #000000;
+  background-color: #bbb6ae;
   box-shadow: 0 2px #2c2c2c;
   cursor: pointer;
 }
 .logBtn:hover {
-  background-color: #7e7e71;
+  background-color: #e7b75f;
 }
 .logBtn:active {
-  background-color: #e6e6d4 !important;
+  background-color: #7e6433 !important;
   border-color: #000000;
 }
 

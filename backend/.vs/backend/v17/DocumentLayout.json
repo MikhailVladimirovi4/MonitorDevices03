@@ -46,8 +46,7 @@
               "RelativeToolTip": "DataAccess\\MonitorDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:56:12.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T08:56:12.719Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "Background\\Archiving.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T07:09:27.793Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T07:09:27.793Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "Repository\\DeviceRepository.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAowIYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T11:50:47.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-20T11:50:47.55Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "Controllers\\DeviceController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T08:25:08.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T08:25:08.956Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T11:58:01.626Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-20T11:58:01.626Z"
             }
           ]
         }

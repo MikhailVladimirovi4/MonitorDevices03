@@ -1,13 +1,14 @@
 .table {
-    margin-top: 2.8%;
+    margin-top: 3.2%;
     margin-bottom: 2%;
+    margin-left: 0.1%;
     background: #cacaca;
     width: 100%;
   }
   .table thead th {
     margin-top: 2.8%;
     position: sticky;
-    top: 5.7%;
+    top: 6.7%;
     font-weight: bold;
     text-align: left;
     border: none;
