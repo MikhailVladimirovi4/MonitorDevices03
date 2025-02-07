@@ -107,3 +107,12 @@ export const addDevice = async (
     return null;
   }
 };
+
+export const addDevices = async (newDevices) => {
+  try {
+    return console.log(newDevices);
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};

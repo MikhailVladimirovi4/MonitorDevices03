@@ -122,7 +122,7 @@
 
 .addBtn {
   position: fixed;
-  right: 1%;
+  right: 15%;
   bottom: 0.2%;
   margin: 0;
   padding: 0.2rem;
@@ -142,7 +142,7 @@
 
 .uploadBtn {
   position: fixed;
-  right: 15%;
+  right: 1%;
   bottom: 0.2%;
   margin: 0;
   padding: 0.2rem;
@@ -156,6 +156,24 @@
   background-color: #525458;
 }
 .uploadBtn:active {
+  background-color: #242526 !important;
+  border-color: #000000;
+}
+
+.selectedFileBtn {
+  bottom: 0.2%;
+  margin: 0;
+  padding: 0.2rem;
+  font-size: 01vw;
+  border-radius: 10%;
+  color: #ffffff;
+  background-color: #7a7f86;
+  cursor: pointer;
+}
+.selectedFileBtn:hover {
+  background-color: #525458;
+}
+.selectedFileBtn:active {
   background-color: #242526 !important;
   border-color: #000000;
 }

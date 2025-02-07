@@ -55,3 +55,15 @@
   border-radius: 10px;
   box-sizing: border-box;
 }
+
+.addDevices {
+  align-content: center;
+  margin: auto;
+  background-color: rgba(226, 238, 160, 1);
+  min-width: 50px;
+  min-height: 20px;
+  padding: 1rem;
+  border: 3px solid #2c9602;
+  border-radius: 10px;
+  box-sizing: border-box;
+}

@@ -1,6 +1,7 @@
 import "./modal.css";
 import useInput from "../../services/useInput";
 import Button from "../buttons/Button";
+import AddFromFile from "../uploadFile/AddFromFile.jsx";
 
 export default function Modal({
   open,
@@ -141,6 +142,7 @@ export default function Modal({
             )}
           </>
         ) : null}
+        {action == "addDevices" && <AddFromFile/>}
         <Button style="modalBtn" onClick={() => SetOpenModal(false)}>
           Отмена
         </Button>

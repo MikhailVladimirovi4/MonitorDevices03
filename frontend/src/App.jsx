@@ -13,7 +13,6 @@ import Table from "./components/table/Table.jsx";
 import Header from "./components/header/Header.jsx";
 import DeviceLog from "./components/noteLog/deviceLog.jsx";
 import Button from "./components/buttons/Button.jsx";
-import UploadFile from "./components/uploadFile/LoadFile.jsx";
 
 export default function App() {
   const [devices, setDevices] = useState([]);
@@ -267,7 +266,12 @@ export default function App() {
       </main>
       <footer className="footer">
         {actionResult}
-        <UploadFile />
+        <Button
+          style={"uploadBtn"}
+          onClick={() => (setAction("addDevices"), setOpenModal(true))}
+        >
+          Добавить из файла
+        </Button>
         <Button
           style={"addBtn"}
           onClick={() => (setAction("add"), setOpenModal(true))}
