@@ -1,31 +1,21 @@
 import Button from "../buttons/Button";
 import path from "C:/newDevices/newDevices.txt";
 import { getString } from "../../services/getString";
+import { addDevices } from "../../services/device";
 
-export default function AddFromFile({ addNote }) {
+export default function AddFromFile({ actionComplete, SetOpenModal }) {
   const handleChange = async () => {
-    const dataNewDevices = await getString(path, "\r\n");
+    const newDevices = await getString(path, "\r\n");
 
-    if (dataNewDevices.length < 1) {
+    if (newDevices.length < 1) {
       alert("Пожалуйста подготовьте файл");
       return;
     }
 
-    dataNewDevices.forEach((device) => {
-      const dataNewDevice = device.split(";");
+    const result = await addDevices(newDevices);
 
-      if (dataNewDevice.length != 5) {
-        actionComplete("Некорректно внесены данные в файл");
-      } else {
-        addNote(
-          dataNewDevice[0],
-          dataNewDevice[1],
-          dataNewDevice[2],
-          dataNewDevice[3],
-          dataNewDevice[4]
-        );
-      }
-    });
+    actionComplete(result);
+    SetOpenModal(false);
   };
 
   return (

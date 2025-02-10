@@ -16,6 +16,7 @@ export default function Modal({
   address,
   macAddress,
   note,
+  actionComplete,
 }) {
   const inputIpAddress = useInput();
   const inputContractName = useInput();
@@ -143,7 +144,10 @@ export default function Modal({
           </>
         ) : null}
         {action == "addDevices" && (
-          <AddFromFile addNote={addNote} />
+          <AddFromFile
+            actionComplete={actionComplete}
+            SetOpenModal={SetOpenModal}
+          />
         )}
         <Button style="modalBtn" onClick={() => SetOpenModal(false)}>
           Отмена

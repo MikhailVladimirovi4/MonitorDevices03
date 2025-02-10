@@ -107,3 +107,15 @@ export const addDevice = async (
     return null;
   }
 };
+
+export const addDevices = async (newDevices) => {
+  try {
+    const str = await axios.post("http://localhost:5233/Device/several", {
+      dataDevices: newDevices,
+    });
+    return str.data;
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};

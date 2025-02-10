@@ -139,7 +139,7 @@ export default function App() {
     setInterval(() => setActionResult("Логирование:"), updateInterval);
   }
 
-  function deleteNote(ipAddress) {
+   function deleteNote(ipAddress) {
     const response = deleteDevice(ipAddress);
     response.then((value) => actionComplete(value));
   }
@@ -187,7 +187,7 @@ export default function App() {
     }
   }
 
-  function editNote(
+   function editNote(
     ipAddress,
     newContractName,
     newContractId,
@@ -235,6 +235,7 @@ export default function App() {
         deleteNote={deleteNote}
         editNote={editNote}
         addNote={addNote}
+        actionComplete={actionComplete}
         ipAddress={ipAddress}
         contractName={contractName}
         contractId={contractId}

@@ -1,4 +1,5 @@
 ﻿using backend.Contracts;
+using backend.Models;
 using backend.Models.DTO;
 using backend.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,41 @@ namespace backend.Controllers
                 GetStringResult(request.Address),
                 GetStringResult(request.IpAddress),
                 GetStringResult(request.MacAddress)), ct));
+        }
+
+        [HttpPost("several")]
+        public async Task<IActionResult> CreateDevicesAsync([FromBody] CreateDevicesRequest request, CancellationToken ct)
+        {
+            bool isResultOk = true;
+            string resultErr = "Ошибки заполнения исходника устройств .txt в строках: ";
+
+            for (int i = 0; i < request.DataDevices.Length; i++)
+            {
+                string[] dataDevice = request.DataDevices[i].Split(";");
+
+                if (dataDevice.Length != 5)
+                {
+                    resultErr = resultErr + " " + (i + 1);
+                    isResultOk = false;
+                }
+                else
+                {
+                    for (int j = 0; j < dataDevice.Length; j++)
+                    {
+                        await _devicesRepository.CreateAsync(new CreateDeviceDto(
+                            dataDevice[0],
+                            dataDevice[1],
+                            dataDevice[2],
+                            dataDevice[3],
+                            dataDevice[4]), ct);
+                    }
+                }
+            }
+
+            if (isResultOk)
+                return Ok("Устройства из файла добавлены ПОЛНОСТЬЮ");
+            else
+                return Ok(resultErr);
         }
 
         [HttpPut]
