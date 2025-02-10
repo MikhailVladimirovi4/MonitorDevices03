@@ -142,7 +142,9 @@ export default function Modal({
             )}
           </>
         ) : null}
-        {action == "addDevices" && <AddFromFile/>}
+        {action == "addDevices" && (
+          <AddFromFile addNote={addNote} />
+        )}
         <Button style="modalBtn" onClick={() => SetOpenModal(false)}>
           Отмена
         </Button>

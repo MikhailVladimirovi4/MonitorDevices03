@@ -114,9 +114,11 @@ export default function App() {
   };
 
   function doSort(number) {
-    sortParam == number
-      ? setSortDirection((sortDirection) => -sortDirection)
-      : null;
+    if (number != null) {
+      sortParam == number
+        ? setSortDirection((sortDirection) => -sortDirection)
+        : null;
+    }
 
     setSortParam(number);
   }
