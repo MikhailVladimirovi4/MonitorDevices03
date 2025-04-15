@@ -5,7 +5,7 @@ namespace backend.Background
 {
     public class Archiving : BackgroundService
     {
-        private readonly int _waitHour = 3;
+        private readonly int _waitHour = 2;
         private readonly TimeSpan _timeOut;
         private readonly IDeviceRepository _deviceRepository;
         private List<DeviceMonthLogDto> _devices = new();
@@ -13,7 +13,7 @@ namespace backend.Background
         public Archiving(IDeviceRepository deviceRepository)
         {
             _deviceRepository = deviceRepository;
-            _month = DateTime.Now.Month;
+            _month = DateTime.Now.Hour;
             _timeOut = TimeSpan.FromHours(_waitHour);
         }
 
@@ -21,10 +21,12 @@ namespace backend.Background
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (_month != DateTime.Now.Month)
+                Console.WriteLine(_month + " перед проверкой");
+                if (_month != DateTime.Now.Hour)
                 {
-                    _month = DateTime.Now.Month;
-                    string path = @"C:\LogMonitor\MonitorDevices_arhiveOffline_" + _month + "." + DateTime.Now.Year + ".txt";
+                    _month = DateTime.Now.Hour;
+                    Console.WriteLine(_month + " присвоено");
+                    string path = @$"/var/lib/data/Devices_arhiveOffline_{DateTime.Now.Hour}_{_month}_{DateTime.Now.Year}.txt";
                     _devices = await _deviceRepository.GetMonthlyLogDataAsync(stoppingToken);
                     string[] data = new string[_devices.Count];
 
@@ -37,7 +39,9 @@ namespace backend.Background
                     }
 
                     Console.WriteLine(await CreateArchiveFileAsync(path, data));
-                    Console.WriteLine(await _deviceRepository.ResetDataOfflineAsync(stoppingToken));
+                    //Console.WriteLine(await _deviceRepository.ResetDataOfflineAsync(stoppingToken));
+
+                    GC.GetGeneration(data);
                 }
                 await Task.Delay(_timeOut, stoppingToken);
             }

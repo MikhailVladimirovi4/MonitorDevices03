@@ -7,28 +7,24 @@
       "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:background\\netstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\repository\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:repository\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\contracts\\createdevicesrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:contracts\\createdevicesrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\background\\archiving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:background\\archiving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\dataaccess\\monitordbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:dataaccess\\monitordbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|c:\\vsprojects\\monitordevices03\\backend\\repository\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF22CF4-D291-4F20-9E2F-13171D2D3810}|backend.csproj|solutionrelative:repository\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,44 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MonitorDbContext.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\DataAccess\\MonitorDbContext.cs",
-              "RelativeDocumentMoniker": "DataAccess\\MonitorDbContext.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\DataAccess\\MonitorDbContext.cs",
-              "RelativeToolTip": "DataAccess\\MonitorDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:56:12.719Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Archiving.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\Archiving.cs",
-              "RelativeDocumentMoniker": "Background\\Archiving.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\Archiving.cs",
-              "RelativeToolTip": "Background\\Archiving.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T07:09:27.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DeviceRepository.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\DeviceRepository.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
-              "RelativeToolTip": "Repository\\DeviceRepository.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAA7wIYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T11:50:47.55Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -84,47 +44,73 @@
               "RelativeDocumentMoniker": "Background\\NetStatus.cs",
               "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\NetStatus.cs",
               "RelativeToolTip": "Background\\NetStatus.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAgwEMAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAA1wCEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T07:28:03.959Z",
+              "WhenOpened": "2025-04-10T13:58:38.044Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DeviceController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Controllers\\DeviceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DeviceController.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Controllers\\DeviceController.cs",
-              "RelativeToolTip": "Controllers\\DeviceController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAmwCoAAABUAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Archiving.cs",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\Archiving.cs",
+              "RelativeDocumentMoniker": "Background\\Archiving.cs",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Background\\Archiving.cs",
+              "RelativeToolTip": "Background\\Archiving.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBgAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T08:25:08.956Z",
+              "WhenOpened": "2025-04-07T13:24:27.918Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateDevicesRequest.cs",
-              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Contracts\\CreateDevicesRequest.cs",
-              "RelativeDocumentMoniker": "Contracts\\CreateDevicesRequest.cs",
-              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Contracts\\CreateDevicesRequest.cs",
-              "RelativeToolTip": "Contracts\\CreateDevicesRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T08:39:40.93Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "DeviceRepository.cs",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\DeviceRepository.cs",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Repository\\DeviceRepository.cs",
+              "RelativeToolTip": "Repository\\DeviceRepository.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAwwIoAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T13:22:18.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-24T07:25:38.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T11:58:01.626Z"
+              "WhenOpened": "2025-01-20T11:58:01.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\VSProjects\\MonitorDevices03\\backend\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\VSProjects\\MonitorDevices03\\backend\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-24T09:29:56.549Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -13,8 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MonitorDbContext>(
     options =>
     {
-    options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(MonitorDbContext)));
-    }, ServiceLifetime.Singleton);
+    options.UseNpgsql("Host=database;Database=MonitorDevices;Username=postgres;Password=47QUv7J6bR31");
+    }, ServiceLifetime.Scoped);
 
 builder.Services.AddSingleton<IDeviceRepository, DeviceRepository>();
 builder.Services.AddHostedService<NetStatus>();
@@ -32,11 +32,11 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 app.UseCors();
 

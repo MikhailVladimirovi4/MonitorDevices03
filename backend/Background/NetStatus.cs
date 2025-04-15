@@ -65,7 +65,7 @@ namespace backend.Background
 
             try
             {
-//                Console.WriteLine("PING ip-address: " + host);
+                Console.WriteLine($"PING ip-address: {host}");
 
                 Ping ping = new();
                 PingReply ResultPing = await ping.SendPingAsync(host, responseTime);

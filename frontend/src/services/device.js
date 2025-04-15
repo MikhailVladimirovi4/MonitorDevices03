@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fetchDevices = async () => {
   try {
-    return (await axios.get("http://localhost:5233/device")).data.devices;
+    return (await axios.get("http://localhost:10001/device")).data.devices;
   } catch (e) {
     console.log(e);
     return null;
@@ -12,7 +12,7 @@ export const fetchDevices = async () => {
 export const deleteDevice = async (ipAddress) => {
   try {
     const str = await axios.delete(
-      "http://localhost:5233/device?ipAddress=" + ipAddress
+      "http://localhost:10001/device?ipAddress=" + ipAddress
     );
     return str.data;
   } catch (e) {
@@ -36,7 +36,7 @@ export const editDevice = async (
   newNote == "" ? (newNote = "-") : null;
   try {
     const str = await axios.put(
-      "http://localhost:5233/Device?ipAddress=" +
+      "http://localhost:10001/Device?ipAddress=" +
         ipAddress +
         "&contractName=" +
         newContractName +
@@ -60,7 +60,7 @@ export const fetchLog = async (ipAddress) => {
   try {
     return (
       await axios.get(
-        "http://localhost:5233/Device/device_log?ipAddress=" + ipAddress
+        "http://localhost:10001/Device/device_log?ipAddress=" + ipAddress
       )
     ).data.log.log;
   } catch (e) {
@@ -72,7 +72,7 @@ export const fetchLog = async (ipAddress) => {
 export const deleteLog = async (ipAddress) => {
   try {
     const str = await axios.put(
-      "http://localhost:5233/Device/device_log?ipAddress=" + ipAddress
+      "http://localhost:10001/Device/device_log?ipAddress=" + ipAddress
     );
     return str.data;
   } catch (e) {
@@ -94,7 +94,7 @@ export const addDevice = async (
   ipAddress == "" ? (ipAddress = "-") : null;
   macAddress == "" ? (macAddress = "-") : null;
   try {
-    const str = await axios.post("http://localhost:5233/Device", {
+    const str = await axios.post("http://localhost:10001/Device", {
       contractName,
       contractId,
       address,
@@ -110,7 +110,7 @@ export const addDevice = async (
 
 export const addDevices = async (newDevices) => {
   try {
-    const str = await axios.post("http://localhost:5233/Device/several", {
+    const str = await axios.post("http://localhost:10001/Device/several", {
       dataDevices: newDevices,
     });
     return str.data;

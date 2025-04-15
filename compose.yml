@@ -1,41 +1,41 @@
 services:
-  database:
-    container_name: database
-    image: postgres:latest
-    restart: always
-    environment:
-      DATABASE_HOST: "127.0.0.1"
-      POSTGRES_DB: "MonitorDevices"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "47QUv7J6bR31"
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
+  # database:
+  #   container_name: database
+  #   image: postgres:latest
+  #   restart: always
+  #   environment:
+  #     POSTGRES_DB: "MonitorDevices"
+  #     POSTGRES_USER: "postgres"
+  #     POSTGRES_PASSWORD: "47QUv7J6bR31"
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   ports:
+  #     - 5432:5432
 
   # api:
   #   container_name: backend
   #   build: ./backend
   #   image: backend:1.0.0
   #   restart: always
-  #   # extra_hosts:
-  #   #   - "host.docker.internal:host-gateway"
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
+  #   volumes:
+  #     - api-data:/var/lib/data
   #   # depends_on:
   #   #   - database
   #   ports:
-  #     - 10002:8080
+  #     - 10001:8080
 
-  # web:
-  #   container_name: frontend
-  #   build: ./frontend
-  #   image: frontend:1.0.0
-  #   restart: always
-  #   # extra_hosts:
-  #   #   - "host.docker.internal:host-gateway"
-  #   ports:
-  #     - 10001:5173
-  #   depends_on:
-  #     - api
+  web:
+    container_name: frontend
+    build: ./frontend
+    image: frontend:1.0.0
+    restart: always
+    ports:
+      - 10002:5173
+    # depends_on:
+    #   - api
 
-volumes:
-  postgres-data: 
+# volumes:
+#   api-data:
+#   postgres-data:

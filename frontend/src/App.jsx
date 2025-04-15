@@ -269,12 +269,12 @@ export default function App() {
       </main>
       <footer className="footer">
         {actionResult}
-        <Button
+        {/* <Button
           style={"uploadBtn"}
           onClick={() => (setAction("addDevices"), setOpenModal(true))}
         >
           Добавить из файла
-        </Button>
+        </Button> */}
         <Button
           style={"addBtn"}
           onClick={() => (setAction("add"), setOpenModal(true))}

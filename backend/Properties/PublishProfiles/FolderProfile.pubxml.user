@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\VSProjects\MonitorDevices03\backend\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2025-02-24T07:22:45.9435853Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="backend.DataAccess.MonitorDbContext">
+      <Value>
+      </Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

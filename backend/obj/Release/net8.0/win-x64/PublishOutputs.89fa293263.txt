@@ -1,0 +1,5 @@
+C:\VSProjects\MonitorDevices03\backend\obj\Release\net8.0\win-x64\PubTmp\Out\appsettings.Development.json
+C:\VSProjects\MonitorDevices03\backend\obj\Release\net8.0\win-x64\PubTmp\Out\appsettings.json
+C:\VSProjects\MonitorDevices03\backend\obj\Release\net8.0\win-x64\PubTmp\Out\backend.pdb
+C:\VSProjects\MonitorDevices03\backend\obj\Release\net8.0\win-x64\PubTmp\Out\aspnetcorev2_inprocess.dll
+C:\VSProjects\MonitorDevices03\backend\obj\Release\net8.0\win-x64\PubTmp\Out\backend.exe
